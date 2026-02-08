@@ -1,9 +1,112 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Contraseña</title>
+    <style>
+        /* ESTILOS (CSS): Para que la página se vea bien */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        .contenedor {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 { color: #333; }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Para que el padding no rompa el ancho */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para los mensajes */
+        #mensaje {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 14px;
+            min-height: 20px; /* Evita saltos cuando no hay texto */
+        }
+
+        .error { color: #dc3545; }
+        .exito { color: #28a745; }
+    </style>
+</head>
 <body>
-  <h1>YOUR NAME</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
 
+    <div class="contenedor">
+        <h2>Acceso Privado</h2>
+        <p>Introduce la clave para continuar:</p>
+        
+        <input type="password" id="inputPassword" placeholder="Escribe aquí...">
+        
+        <button onclick="validarPassword()">Entrar</button>
+        
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        // LÓGICA (JavaScript)
+        function validarPassword() {
+            // 1. Definimos la contraseña correcta
+            const contrasenaCorrecta = "secreto123";
+
+            // 2. Obtenemos lo que escribió el usuario
+            const inputUsuario = document.getElementById("inputPassword").value;
+            const cajaMensaje = document.getElementById("mensaje");
+
+            // 3. Comparamos
+            if (inputUsuario === contrasenaCorrecta) {
+                // SI ACIERTA:
+                cajaMensaje.textContent = "✅ ¡Contraseña correcta! Bienvenido.";
+                cajaMensaje.className = "exito"; // Pone el texto en verde
+                
+                // Opcional: Redirigir a otra web si acierta
+                // window.location.href = "https://google.com"; 
+
+            } else {
+                // SI FALLA:
+                cajaMensaje.textContent = "❌ Contraseña incorrecta. Inténtalo de nuevo.";
+                cajaMensaje.className = "error"; // Pone el texto en rojo
+                
+                // Limpiamos el campo y ponemos el foco de nuevo
+                document.getElementById("inputPassword").value = "";
+                document.getElementById("inputPassword").focus();
+            }
+        }
+    </script>
+
+</body>
 </html>

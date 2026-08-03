@@ -111,6 +111,66 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Lectura accesible'**
   String get lectura_accesible;
+
+  /// No description provided for @accesibilidad_alto_contraste.
+  ///
+  /// In es, this message translates to:
+  /// **'Alto contraste'**
+  String get accesibilidad_alto_contraste;
+
+  /// No description provided for @landing_nav_como_funciona.
+  ///
+  /// In es, this message translates to:
+  /// **'Cómo funciona'**
+  String get landing_nav_como_funciona;
+
+  /// No description provided for @landing_nav_servicios.
+  ///
+  /// In es, this message translates to:
+  /// **'Servicios'**
+  String get landing_nav_servicios;
+
+  /// No description provided for @landing_nav_preguntas_frecuentes.
+  ///
+  /// In es, this message translates to:
+  /// **'Preguntas frecuentes'**
+  String get landing_nav_preguntas_frecuentes;
+
+  /// No description provided for @landing_nav_casos_exito.
+  ///
+  /// In es, this message translates to:
+  /// **'Casos de éxito'**
+  String get landing_nav_casos_exito;
+
+  /// No description provided for @landing_nav_blog.
+  ///
+  /// In es, this message translates to:
+  /// **'Blog'**
+  String get landing_nav_blog;
+
+  /// No description provided for @landing_iniciar_sesion.
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar sesión'**
+  String get landing_iniciar_sesion;
+
+  /// No description provided for @landing_registrarse.
+  ///
+  /// In es, this message translates to:
+  /// **'Registrarse'**
+  String get landing_registrarse;
+
+  /// No description provided for @landing_abrir_menu.
+  ///
+  /// In es, this message translates to:
+  /// **'Abrir menú'**
+  String get landing_abrir_menu;
+
+  /// No description provided for @landing_cerrar_menu.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar menú'**
+  String get landing_cerrar_menu;
 }
 
 class _AppLocalizationsDelegate

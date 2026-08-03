@@ -1,6 +1,18 @@
 {
   "@@locale": "es",
 
-  "osature": "Osature", 
-  "lectura_accesible": "Lectura accesible"
+  "osature": "Osature",
+  "lectura_accesible": "Lectura accesible",
+
+  "accesibilidad_alto_contraste": "Alto contraste",
+
+  "landing_nav_como_funciona": "Cómo funciona",
+  "landing_nav_servicios": "Servicios",
+  "landing_nav_preguntas_frecuentes": "Preguntas frecuentes",
+  "landing_nav_casos_exito": "Casos de éxito",
+  "landing_nav_blog": "Blog",
+  "landing_iniciar_sesion": "Iniciar sesión",
+  "landing_registrarse": "Registrarse",
+  "landing_abrir_menu": "Abrir menú",
+  "landing_cerrar_menu": "Cerrar menú"
 }

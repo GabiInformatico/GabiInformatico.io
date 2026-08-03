@@ -17,4 +17,7 @@ class AppMedidas {
   static const double radio = 12;
 
   static const double anchoMaximo = 1120;
+
+  // Por debajo de este ancho, la cabecera pasa a modo movil (hamburguesa).
+  static const double anchoMovil = 760;
 }

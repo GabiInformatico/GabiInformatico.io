@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "osature_web",
+      "runtimeExecutable": "C:\\Programas instalados\\flutter\\bin\\flutter.bat",
+      "runtimeArgs": ["run", "-d", "web-server", "--web-port", "8765"],
+      "port": 8765
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../l10n/app_localizations.dart';
 import 'accessibility_view_model.dart';
 
 // Barra azul oscura de arriba del todo.
@@ -12,6 +13,7 @@ class AccessibilityBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final viewModel = context.watch<AccessibilityViewModel>();
     final activo = viewModel.altoContraste;
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       color: AppColors.azulOscuro,
@@ -25,7 +27,11 @@ class AccessibilityBar extends StatelessWidget {
               // Le digo al lector de pantalla si el boton esta activado.
               Semantics(
                 toggled: activo,
-                child: _botonContraste(activo, viewModel.cambiarContraste),
+                child: _botonContraste(
+                  activo,
+                  viewModel.cambiarContraste,
+                  l10n,
+                ),
               ),
             ],
           ),
@@ -35,11 +41,15 @@ class AccessibilityBar extends StatelessWidget {
   }
 
   // Cuando esta activo se pone al reves: fondo blanco y letra azul.
-  Widget _botonContraste(bool activo, VoidCallback alPulsar) {
+  Widget _botonContraste(
+    bool activo,
+    VoidCallback alPulsar,
+    AppLocalizations l10n,
+  ) {
     return TextButton.icon(
       onPressed: alPulsar,
       icon: const Icon(Icons.contrast, size: 15),
-      label: const Text('Alto contraste'),
+      label: Text(l10n.accesibilidad_alto_contraste),
       style: TextButton.styleFrom(
         foregroundColor: activo ? AppColors.azulOscuro : AppColors.blanco,
         backgroundColor: activo ? AppColors.blanco : Colors.transparent,

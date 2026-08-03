@@ -14,5 +14,11 @@
   "landing_iniciar_sesion": "Inicia sessió",
   "landing_registrarse": "Registra't",
   "landing_abrir_menu": "Obre el menú",
-  "landing_cerrar_menu": "Tanca el menú"
+  "landing_cerrar_menu": "Tanca el menú",
+
+  "landing_hero_titulo": "Fes que cada document s'adapti a tu",
+  "landing_hero_subtitulo": "Osature adapta textos, exàmens i fitxes de treball al format que millor s'ajusta a cada persona: la lletra, el ritme i els suports que necessita.",
+  "landing_hero_cta_primario": "Crea un compte gratuït",
+  "landing_hero_cta_secundario": "Veure com funciona",
+  "landing_hero_nota": "Sense targeta, comença a adaptar en menys d'un minut"
 }

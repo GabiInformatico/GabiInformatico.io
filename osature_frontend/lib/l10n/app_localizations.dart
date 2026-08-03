@@ -171,6 +171,36 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Cerrar menú'**
   String get landing_cerrar_menu;
+
+  /// No description provided for @landing_hero_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Haz que cada documento se adapte a ti'**
+  String get landing_hero_titulo;
+
+  /// No description provided for @landing_hero_subtitulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Osature adapta textos, exámenes y fichas de trabajo al formato que mejor se ajusta a cada persona: la letra, el ritmo y los apoyos que necesita.'**
+  String get landing_hero_subtitulo;
+
+  /// No description provided for @landing_hero_cta_primario.
+  ///
+  /// In es, this message translates to:
+  /// **'Crear cuenta gratis'**
+  String get landing_hero_cta_primario;
+
+  /// No description provided for @landing_hero_cta_secundario.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver cómo funciona'**
+  String get landing_hero_cta_secundario;
+
+  /// No description provided for @landing_hero_nota.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin tarjeta, empieza a adaptar en menos de un minuto'**
+  String get landing_hero_nota;
 }
 
 class _AppLocalizationsDelegate

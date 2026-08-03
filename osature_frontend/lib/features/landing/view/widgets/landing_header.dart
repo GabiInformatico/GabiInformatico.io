@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../../shared/widgets/ghost_button.dart';
+import '../../../../shared/widgets/primary_button.dart';
 import '../../model/nav_link.dart';
 import '../../view_model/landing_view_model.dart';
 
@@ -61,9 +63,9 @@ class LandingHeader extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildBotonFantasma(l10n.landing_iniciar_sesion),
+            GhostButton(texto: l10n.landing_iniciar_sesion, onPressed: () {}),
             const SizedBox(width: 10),
-            _buildBotonPrimario(l10n.landing_registrarse),
+            PrimaryButton(texto: l10n.landing_registrarse, onPressed: () {}),
           ],
         ),
       ],
@@ -81,7 +83,7 @@ class LandingHeader extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildBotonPrimario(l10n.landing_registrarse),
+            PrimaryButton(texto: l10n.landing_registrarse, onPressed: () {}),
             const SizedBox(width: 10),
             _buildHamburguesa(viewModel, l10n),
           ],
@@ -126,39 +128,6 @@ class LandingHeader extends StatelessWidget {
       onPressed: () {},
       style: TextButton.styleFrom(foregroundColor: AppColors.textoClaro),
       child: Text(enlace.texto(l10n)),
-    );
-  }
-
-  // Boton con borde, para "Iniciar sesion".
-  Widget _buildBotonFantasma(String texto) {
-    return OutlinedButton(
-      onPressed: () {},
-      style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.azulOscuro,
-        side: const BorderSide(color: AppColors.bordeOscuro, width: 1.5),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 11),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppMedidas.radio),
-        ),
-      ),
-      child: Text(texto),
-    );
-  }
-
-  // Boton relleno de azul, para "Registrarse".
-  Widget _buildBotonPrimario(String texto) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.azul,
-        foregroundColor: AppColors.blanco,
-        elevation: 0,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 11),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppMedidas.radio),
-        ),
-      ),
-      child: Text(texto),
     );
   }
 }

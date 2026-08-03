@@ -31,6 +31,7 @@ class AccessibilityBar extends StatelessWidget {
                   activo,
                   viewModel.cambiarContraste,
                   l10n,
+                  Theme.of(context).textTheme,
                 ),
               ),
             ],
@@ -45,6 +46,7 @@ class AccessibilityBar extends StatelessWidget {
     bool activo,
     VoidCallback alPulsar,
     AppLocalizations l10n,
+    TextTheme estilos,
   ) {
     return TextButton.icon(
       onPressed: alPulsar,
@@ -53,11 +55,7 @@ class AccessibilityBar extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: activo ? AppColors.azulOscuro : AppColors.blanco,
         backgroundColor: activo ? AppColors.blanco : Colors.transparent,
-        textStyle: const TextStyle(
-          fontFamily: 'Rubik',
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-        ),
+        textStyle: estilos.labelMedium,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         minimumSize: const Size(0, 32),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,

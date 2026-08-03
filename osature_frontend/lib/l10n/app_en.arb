@@ -14,5 +14,11 @@
   "landing_iniciar_sesion": "Log in",
   "landing_registrarse": "Sign up",
   "landing_abrir_menu": "Open menu",
-  "landing_cerrar_menu": "Close menu"
+  "landing_cerrar_menu": "Close menu",
+
+  "landing_hero_titulo": "Make every document adapt to you",
+  "landing_hero_subtitulo": "Osature adapts texts, exams and worksheets to the format that best suits each person: the font, the pace and the support they need.",
+  "landing_hero_cta_primario": "Create a free account",
+  "landing_hero_cta_secundario": "See how it works",
+  "landing_hero_nota": "No card needed, start adapting in under a minute"
 }

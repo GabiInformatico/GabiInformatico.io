@@ -43,4 +43,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get landing_cerrar_menu => 'Close menu';
+
+  @override
+  String get landing_hero_titulo => 'Make every document adapt to you';
+
+  @override
+  String get landing_hero_subtitulo =>
+      'Osature adapts texts, exams and worksheets to the format that best suits each person: the font, the pace and the support they need.';
+
+  @override
+  String get landing_hero_cta_primario => 'Create a free account';
+
+  @override
+  String get landing_hero_cta_secundario => 'See how it works';
+
+  @override
+  String get landing_hero_nota =>
+      'No card needed, start adapting in under a minute';
 }

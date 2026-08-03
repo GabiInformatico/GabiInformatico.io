@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/accessibility/accessibility_bar.dart';
+import '../../../shared/layout/app_shell.dart';
 import 'widgets/landing_header.dart';
+import 'widgets/landing_hero.dart';
 import 'widgets/landing_mobile_menu.dart';
 
 // Pantalla de la landing publica de Osature.
-// De momento solo tiene las barras de arriba; las demas secciones se
-// iran añadiendo bloque a bloque.
+// Las secciones se van añadiendo bloque a bloque dentro de la columna
+// con scroll.
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const AccessibilityBar(),
-          // Stack para que el menu movil se pinte encima de la cabecera
-          // sin desplazarla. Cuando añadamos mas secciones debajo, este
-          // Stack tendra que envolverlas tambien para que el desplegable
-          // siga tapandolas correctamente.
-          Stack(
-            clipBehavior: Clip.none,
-            children: const [LandingHeader(), LandingMobileMenu()],
+    return AppShell(
+      // El Stack envuelve todo el contenido con scroll para que el menu
+      // movil (ultimo hijo) se pinte siempre por encima, sin que las
+      // secciones que vienen despues lo tapen.
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: const [
+          SingleChildScrollView(
+            child: Column(children: [LandingHeader(), LandingHero()]),
           ),
+          LandingMobileMenu(),
         ],
       ),
     );

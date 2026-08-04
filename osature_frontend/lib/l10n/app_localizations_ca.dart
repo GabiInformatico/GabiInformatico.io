@@ -107,5 +107,60 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get landing_paso_descargar_descripcion =>
-      'Rep-lo en PDF, Word, àudio o braille. Llest per llegir, imprimir o compartir.';
+      'Rep-lo en PDF o Word. Llest per llegir, imprimir o compartir.';
+
+  @override
+  String get landing_servicios_eyebrow => 'Serveis';
+
+  @override
+  String get landing_servicios_titulo => 'Tria el pla que s\'ajusta a tu';
+
+  @override
+  String get landing_servicios_subtitulo =>
+      'Comença gratis i passa\'t a premium quan necessitis més adaptacions i documents.';
+
+  @override
+  String get landing_plan_precio_sufijo => '/mes';
+
+  @override
+  String get landing_plan_gratis_titulo => 'Compte gratuït';
+
+  @override
+  String get landing_plan_gratis_precio => '0 €';
+
+  @override
+  String get landing_plan_gratis_descripcion => 'Ideal per començar.';
+
+  @override
+  String get landing_plan_gratis_caracteristica_1 =>
+      'Fins a 5 documents al mes';
+
+  @override
+  String get landing_plan_gratis_caracteristica_2 =>
+      'Només un perfil de configuració';
+
+  @override
+  String get landing_plan_gratis_boton => 'Crea un compte gratuït';
+
+  @override
+  String get landing_plan_premium_badge => 'Recomanada';
+
+  @override
+  String get landing_plan_premium_titulo => 'Compte premium';
+
+  @override
+  String get landing_plan_premium_precio => 'Per definir';
+
+  @override
+  String get landing_plan_premium_descripcion => 'Perfecte per al dia a dia.';
+
+  @override
+  String get landing_plan_premium_caracteristica_1 => 'Documents il·limitats';
+
+  @override
+  String get landing_plan_premium_caracteristica_2 =>
+      'Múltiples perfils de configuració';
+
+  @override
+  String get landing_plan_premium_boton => 'Comença amb premium';
 }

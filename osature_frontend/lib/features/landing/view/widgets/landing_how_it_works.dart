@@ -37,7 +37,12 @@ class LandingHowItWorks extends StatelessWidget {
                 final apilado = constraints.maxWidth < AppMedidas.anchoTablet;
 
                 if (apilado) {
+                  // stretch: sin esto cada tarjeta se encoge a su ancho
+                  // natural (el texto no envuelve en varias lineas) en
+                  // vez de ocupar todo el ancho disponible, y la que
+                  // tiene el texto mas largo sale mas ancha que las demas.
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       tarjetas[0],
                       const SizedBox(height: 24),

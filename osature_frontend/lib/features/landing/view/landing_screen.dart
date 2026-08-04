@@ -5,6 +5,7 @@ import 'widgets/landing_header.dart';
 import 'widgets/landing_hero.dart';
 import 'widgets/landing_how_it_works.dart';
 import 'widgets/landing_mobile_menu.dart';
+import 'widgets/landing_services.dart';
 
 // Pantalla de la landing publica de Osature.
 // Las secciones se van añadiendo bloque a bloque dentro de la columna
@@ -23,7 +24,12 @@ class LandingScreen extends StatelessWidget {
         children: const [
           SingleChildScrollView(
             child: Column(
-              children: [LandingHeader(), LandingHero(), LandingHowItWorks()],
+              children: [
+                LandingHeader(),
+                LandingHero(),
+                LandingHowItWorks(),
+                LandingServices(),
+              ],
             ),
           ),
           LandingMobileMenu(),

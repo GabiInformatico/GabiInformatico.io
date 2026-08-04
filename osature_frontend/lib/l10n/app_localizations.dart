@@ -283,8 +283,110 @@ abstract class AppLocalizations {
   /// No description provided for @landing_paso_descargar_descripcion.
   ///
   /// In es, this message translates to:
-  /// **'Recíbelo en PDF, Word, audio o braille. Listo para leer, imprimir o compartir.'**
+  /// **'Recíbelo en PDF o Word. Listo para leer, imprimir o compartir.'**
   String get landing_paso_descargar_descripcion;
+
+  /// No description provided for @landing_servicios_eyebrow.
+  ///
+  /// In es, this message translates to:
+  /// **'Servicios'**
+  String get landing_servicios_eyebrow;
+
+  /// No description provided for @landing_servicios_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Elige el plan que se ajusta a ti'**
+  String get landing_servicios_titulo;
+
+  /// No description provided for @landing_servicios_subtitulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Empieza gratis y pásate a premium cuando necesites más perfiles y documentos.'**
+  String get landing_servicios_subtitulo;
+
+  /// No description provided for @landing_plan_precio_sufijo.
+  ///
+  /// In es, this message translates to:
+  /// **'/mes'**
+  String get landing_plan_precio_sufijo;
+
+  /// No description provided for @landing_plan_gratis_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuenta gratuita'**
+  String get landing_plan_gratis_titulo;
+
+  /// No description provided for @landing_plan_gratis_precio.
+  ///
+  /// In es, this message translates to:
+  /// **'0 €'**
+  String get landing_plan_gratis_precio;
+
+  /// No description provided for @landing_plan_gratis_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Ideal para empezar.'**
+  String get landing_plan_gratis_descripcion;
+
+  /// No description provided for @landing_plan_gratis_caracteristica_1.
+  ///
+  /// In es, this message translates to:
+  /// **'Hasta 5 documentos al mes'**
+  String get landing_plan_gratis_caracteristica_1;
+
+  /// No description provided for @landing_plan_gratis_caracteristica_2.
+  ///
+  /// In es, this message translates to:
+  /// **'Solo un perfil de configuración'**
+  String get landing_plan_gratis_caracteristica_2;
+
+  /// No description provided for @landing_plan_gratis_boton.
+  ///
+  /// In es, this message translates to:
+  /// **'Crear cuenta gratis'**
+  String get landing_plan_gratis_boton;
+
+  /// No description provided for @landing_plan_premium_badge.
+  ///
+  /// In es, this message translates to:
+  /// **'Recomendada'**
+  String get landing_plan_premium_badge;
+
+  /// No description provided for @landing_plan_premium_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuenta premium'**
+  String get landing_plan_premium_titulo;
+
+  /// No description provided for @landing_plan_premium_precio.
+  ///
+  /// In es, this message translates to:
+  /// **'A definir'**
+  String get landing_plan_premium_precio;
+
+  /// No description provided for @landing_plan_premium_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Perfecto para el día a día.'**
+  String get landing_plan_premium_descripcion;
+
+  /// No description provided for @landing_plan_premium_caracteristica_1.
+  ///
+  /// In es, this message translates to:
+  /// **'Documentos ilimitados'**
+  String get landing_plan_premium_caracteristica_1;
+
+  /// No description provided for @landing_plan_premium_caracteristica_2.
+  ///
+  /// In es, this message translates to:
+  /// **'Múltiples perfiles de configuración'**
+  String get landing_plan_premium_caracteristica_2;
+
+  /// No description provided for @landing_plan_premium_boton.
+  ///
+  /// In es, this message translates to:
+  /// **'Empezar con premium'**
+  String get landing_plan_premium_boton;
 }
 
 class _AppLocalizationsDelegate

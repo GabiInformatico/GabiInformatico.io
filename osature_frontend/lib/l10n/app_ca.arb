@@ -36,5 +36,23 @@
   "landing_paso_elegir_titulo": "Tria les adaptacions",
   "landing_paso_elegir_descripcion": "Marca les que necessitis o carrega un perfil desat amb la teva configuració habitual.",
   "landing_paso_descargar_titulo": "Descarrega el resultat",
-  "landing_paso_descargar_descripcion": "Rep-lo en PDF o Word. Llest per llegir, imprimir o compartir."
+  "landing_paso_descargar_descripcion": "Rep-lo en PDF o Word. Llest per llegir, imprimir o compartir.",
+
+  "landing_servicios_eyebrow": "Serveis",
+  "landing_servicios_titulo": "Tria el pla que s'ajusta a tu",
+  "landing_servicios_subtitulo": "Comença gratis i passa't a premium quan necessitis més adaptacions i documents.",
+  "landing_plan_precio_sufijo": "/mes",
+  "landing_plan_gratis_titulo": "Compte gratuït",
+  "landing_plan_gratis_precio": "0 €",
+  "landing_plan_gratis_descripcion": "Ideal per començar.",
+  "landing_plan_gratis_caracteristica_1": "Fins a 5 documents al mes",
+  "landing_plan_gratis_caracteristica_2": "Només un perfil de configuració",
+  "landing_plan_gratis_boton": "Crea un compte gratuït",
+  "landing_plan_premium_badge": "Recomanada",
+  "landing_plan_premium_titulo": "Compte premium",
+  "landing_plan_premium_precio": "Per definir",
+  "landing_plan_premium_descripcion": "Perfecte per al dia a dia.",
+  "landing_plan_premium_caracteristica_1": "Documents il·limitats",
+  "landing_plan_premium_caracteristica_2": "Múltiples perfils de configuració",
+  "landing_plan_premium_boton": "Comença amb premium"
 }

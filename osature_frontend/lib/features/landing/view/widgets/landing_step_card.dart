@@ -62,9 +62,14 @@ class LandingStepCard extends StatelessWidget {
           const SizedBox(height: 12),
           Text(paso.titulo(l10n), style: estilos.titleLarge),
           const SizedBox(height: 6),
-          Text(
-            paso.descripcion(l10n),
-            style: estilos.bodyMedium?.copyWith(color: AppColors.textoClaro),
+          SizedBox(
+            height: 45,
+            child: Text(
+              paso.descripcion(l10n),
+              style: estilos.bodyMedium?.copyWith(color: AppColors.textoClaro),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ],
       ),

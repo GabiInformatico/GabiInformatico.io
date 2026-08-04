@@ -36,5 +36,23 @@
   "landing_paso_elegir_titulo": "Elige las adaptaciones",
   "landing_paso_elegir_descripcion": "Marca las que necesites o carga un perfil guardado con tu configuración habitual.",
   "landing_paso_descargar_titulo": "Descarga el resultado",
-  "landing_paso_descargar_descripcion": "Recíbelo en PDF o Word. Listo para leer, imprimir o compartir."
+  "landing_paso_descargar_descripcion": "Recíbelo en PDF o Word. Listo para leer, imprimir o compartir.",
+
+  "landing_servicios_eyebrow": "Servicios",
+  "landing_servicios_titulo": "Elige el plan que se ajusta a ti",
+  "landing_servicios_subtitulo": "Empieza gratis y pásate a premium cuando necesites más perfiles y documentos.",
+  "landing_plan_precio_sufijo": "/mes",
+  "landing_plan_gratis_titulo": "Cuenta gratuita",
+  "landing_plan_gratis_precio": "0 €",
+  "landing_plan_gratis_descripcion": "Ideal para empezar.",
+  "landing_plan_gratis_caracteristica_1": "Hasta 5 documentos al mes",
+  "landing_plan_gratis_caracteristica_2": "Solo un perfil de configuración",
+  "landing_plan_gratis_boton": "Crear cuenta gratis",
+  "landing_plan_premium_badge": "Recomendada",
+  "landing_plan_premium_titulo": "Cuenta premium",
+  "landing_plan_premium_precio": "A definir",
+  "landing_plan_premium_descripcion": "Perfecto para el día a día.",
+  "landing_plan_premium_caracteristica_1": "Documentos ilimitados",
+  "landing_plan_premium_caracteristica_2": "Múltiples perfiles de configuración",
+  "landing_plan_premium_boton": "Empezar con premium"
 }

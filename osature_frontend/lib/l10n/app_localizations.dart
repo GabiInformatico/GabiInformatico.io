@@ -211,7 +211,7 @@ abstract class AppLocalizations {
   /// No description provided for @landing_hero_ilustracion_descripcion.
   ///
   /// In es, this message translates to:
-  /// **'Adaptado para dislexia'**
+  /// **'Adaptado para lectura fácil'**
   String get landing_hero_ilustracion_descripcion;
 
   /// No description provided for @landing_hero_chip_texto_simplificado.
@@ -229,8 +229,62 @@ abstract class AppLocalizations {
   /// No description provided for @landing_hero_chip_lectura_voz_alta.
   ///
   /// In es, this message translates to:
-  /// **'Lectura en voz alta'**
+  /// **'Resaltado de palabras'**
   String get landing_hero_chip_lectura_voz_alta;
+
+  /// No description provided for @landing_como_funciona_eyebrow.
+  ///
+  /// In es, this message translates to:
+  /// **'Cómo funciona'**
+  String get landing_como_funciona_eyebrow;
+
+  /// No description provided for @landing_como_funciona_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Tres pasos para un texto accesible'**
+  String get landing_como_funciona_titulo;
+
+  /// No description provided for @landing_como_funciona_subtitulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin instalar nada. Sube, elige y descarga el documento adaptado en el formato que necesites.'**
+  String get landing_como_funciona_subtitulo;
+
+  /// No description provided for @landing_paso_subir_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Sube tu documento'**
+  String get landing_paso_subir_titulo;
+
+  /// No description provided for @landing_paso_subir_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'PDF, Word o una imagen escaneada. Tú eliges qué quieres hacer accesible.'**
+  String get landing_paso_subir_descripcion;
+
+  /// No description provided for @landing_paso_elegir_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Elige las adaptaciones'**
+  String get landing_paso_elegir_titulo;
+
+  /// No description provided for @landing_paso_elegir_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Marca las que necesites o carga un perfil guardado con tu configuración habitual.'**
+  String get landing_paso_elegir_descripcion;
+
+  /// No description provided for @landing_paso_descargar_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Descarga el resultado'**
+  String get landing_paso_descargar_titulo;
+
+  /// No description provided for @landing_paso_descargar_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Recíbelo en PDF, Word, audio o braille. Listo para leer, imprimir o compartir.'**
+  String get landing_paso_descargar_descripcion;
 }
 
 class _AppLocalizationsDelegate

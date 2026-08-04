@@ -72,6 +72,14 @@ class AppTheme {
         height: 1.2,
         color: AppColors.azulOscuro,
       ),
+      // Titulo de las secciones (Cómo funciona, Servicios...).
+      headlineMedium: TextStyle(
+        fontFamily: 'Quicksand',
+        fontWeight: FontWeight.w700,
+        fontSize: 34,
+        height: 1.2,
+        color: AppColors.azulOscuro,
+      ),
       // Titulos de pantalla o de seccion.
       titleLarge: TextStyle(
         fontFamily: 'Quicksand',
@@ -87,6 +95,14 @@ class AppTheme {
         fontSize: 16,
         height: 1.3,
         color: AppColors.azulOscuro,
+      ),
+      // Etiqueta pequeña en mayusculas encima de un titulo de seccion.
+      titleSmall: TextStyle(
+        fontFamily: 'Quicksand',
+        fontWeight: FontWeight.w900,
+        fontSize: 13,
+        letterSpacing: 1,
+        color: AppColors.azul,
       ),
       // Texto de venta / parrafos destacados (subtitulo del hero...).
       bodyLarge: TextStyle(

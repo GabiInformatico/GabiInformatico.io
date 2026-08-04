@@ -65,7 +65,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get landing_hero_ilustracion_archivo => 'worksheet.pdf';
 
   @override
-  String get landing_hero_ilustracion_descripcion => 'Adapted for dyslexia';
+  String get landing_hero_ilustracion_descripcion => 'Adapted for easy read';
 
   @override
   String get landing_hero_chip_texto_simplificado => 'Simplified text';
@@ -74,5 +74,37 @@ class AppLocalizationsEn extends AppLocalizations {
   String get landing_hero_chip_espaciado_ampliado => 'Wider spacing';
 
   @override
-  String get landing_hero_chip_lectura_voz_alta => 'Read aloud';
+  String get landing_hero_chip_lectura_voz_alta => 'Highlighted text';
+
+  @override
+  String get landing_como_funciona_eyebrow => 'How it works';
+
+  @override
+  String get landing_como_funciona_titulo =>
+      'Three steps to an accessible text';
+
+  @override
+  String get landing_como_funciona_subtitulo =>
+      'No installation needed. Upload, choose and download the adapted document in the format you need.';
+
+  @override
+  String get landing_paso_subir_titulo => 'Upload your document';
+
+  @override
+  String get landing_paso_subir_descripcion =>
+      'PDF, Word or a scanned image. You choose what to make accessible.';
+
+  @override
+  String get landing_paso_elegir_titulo => 'Choose the adaptations';
+
+  @override
+  String get landing_paso_elegir_descripcion =>
+      'Pick the ones you need or load a saved profile with your usual setup.';
+
+  @override
+  String get landing_paso_descargar_titulo => 'Download the result';
+
+  @override
+  String get landing_paso_descargar_descripcion =>
+      'Get it in PDF, Word, audio or braille. Ready to read, print or share.';
 }

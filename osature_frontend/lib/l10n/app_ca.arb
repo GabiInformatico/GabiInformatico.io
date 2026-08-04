@@ -26,5 +26,15 @@
   "landing_hero_ilustracion_descripcion": "Adaptat per a lectura fàcil",
   "landing_hero_chip_texto_simplificado": "Text simplificat",
   "landing_hero_chip_espaciado_ampliado": "Espaiat ampliat",
-  "landing_hero_chip_lectura_voz_alta": "Remarcat de paraules"
+  "landing_hero_chip_lectura_voz_alta": "Remarcat de paraules",
+
+  "landing_como_funciona_eyebrow": "Com funciona",
+  "landing_como_funciona_titulo": "Tres passos per a un text accessible",
+  "landing_como_funciona_subtitulo": "Sense instal·lar res. Puja, tria i descarrega el document adaptat en el format que necessitis.",
+  "landing_paso_subir_titulo": "Puja el teu document",
+  "landing_paso_subir_descripcion": "PDF, Word o una imatge escanejada. Tu tries què vols fer accessible.",
+  "landing_paso_elegir_titulo": "Tria les adaptacions",
+  "landing_paso_elegir_descripcion": "Marca les que necessitis o carrega un perfil desat amb la teva configuració habitual.",
+  "landing_paso_descargar_titulo": "Descarrega el resultat",
+  "landing_paso_descargar_descripcion": "Rep-lo en PDF o Word. Llest per llegir, imprimir o compartir."
 }

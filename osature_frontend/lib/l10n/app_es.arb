@@ -26,5 +26,15 @@
   "landing_hero_ilustracion_descripcion": "Adaptado para lectura fácil",
   "landing_hero_chip_texto_simplificado": "Texto simplificado",
   "landing_hero_chip_espaciado_ampliado": "Espaciado ampliado",
-  "landing_hero_chip_lectura_voz_alta": "Resaltado de palabras"
+  "landing_hero_chip_lectura_voz_alta": "Resaltado de palabras",
+
+  "landing_como_funciona_eyebrow": "Cómo funciona",
+  "landing_como_funciona_titulo": "Tres pasos para un texto accesible",
+  "landing_como_funciona_subtitulo": "Sin instalar nada. Sube, elige y descarga el documento adaptado en el formato que necesites.",
+  "landing_paso_subir_titulo": "Sube tu documento",
+  "landing_paso_subir_descripcion": "PDF, Word o una imagen escaneada. Tú eliges qué quieres hacer accesible.",
+  "landing_paso_elegir_titulo": "Elige las adaptaciones",
+  "landing_paso_elegir_descripcion": "Marca las que necesites o carga un perfil guardado con tu configuración habitual.",
+  "landing_paso_descargar_titulo": "Descarga el resultado",
+  "landing_paso_descargar_descripcion": "Recíbelo en PDF o Word. Listo para leer, imprimir o compartir."
 }

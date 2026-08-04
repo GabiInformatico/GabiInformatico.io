@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../shared/layout/app_shell.dart';
 import 'widgets/landing_header.dart';
 import 'widgets/landing_hero.dart';
+import 'widgets/landing_how_it_works.dart';
 import 'widgets/landing_mobile_menu.dart';
 
 // Pantalla de la landing publica de Osature.
@@ -21,7 +22,9 @@ class LandingScreen extends StatelessWidget {
         clipBehavior: Clip.none,
         children: const [
           SingleChildScrollView(
-            child: Column(children: [LandingHeader(), LandingHero()]),
+            child: Column(
+              children: [LandingHeader(), LandingHero(), LandingHowItWorks()],
+            ),
           ),
           LandingMobileMenu(),
         ],

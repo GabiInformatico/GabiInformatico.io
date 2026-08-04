@@ -26,5 +26,15 @@
   "landing_hero_ilustracion_descripcion": "Adapted for easy read",
   "landing_hero_chip_texto_simplificado": "Simplified text",
   "landing_hero_chip_espaciado_ampliado": "Wider spacing",
-  "landing_hero_chip_lectura_voz_alta": "Highlighted text"
+  "landing_hero_chip_lectura_voz_alta": "Highlighted text",
+
+  "landing_como_funciona_eyebrow": "How it works",
+  "landing_como_funciona_titulo": "Three steps to an accessible text",
+  "landing_como_funciona_subtitulo": "No installation needed. Upload, choose and download the adapted document in the format you need.",
+  "landing_paso_subir_titulo": "Upload your document",
+  "landing_paso_subir_descripcion": "PDF, Word or a scanned image. You choose what to make accessible.",
+  "landing_paso_elegir_titulo": "Choose the adaptations",
+  "landing_paso_elegir_descripcion": "Pick the ones you need or load a saved profile with your usual setup.",
+  "landing_paso_descargar_titulo": "Download the result",
+  "landing_paso_descargar_descripcion": "Get it in PDF or Word. Ready to read, print or share."
 }

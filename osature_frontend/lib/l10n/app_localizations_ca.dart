@@ -65,7 +65,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get landing_hero_ilustracion_archivo => 'fitxa_exercicis.pdf';
 
   @override
-  String get landing_hero_ilustracion_descripcion => 'Adaptat per a dislèxia';
+  String get landing_hero_ilustracion_descripcion =>
+      'Adaptat per a lectura fàcil';
 
   @override
   String get landing_hero_chip_texto_simplificado => 'Text simplificat';
@@ -74,5 +75,37 @@ class AppLocalizationsCa extends AppLocalizations {
   String get landing_hero_chip_espaciado_ampliado => 'Espaiat ampliat';
 
   @override
-  String get landing_hero_chip_lectura_voz_alta => 'Lectura en veu alta';
+  String get landing_hero_chip_lectura_voz_alta => 'Remarcat de paraules';
+
+  @override
+  String get landing_como_funciona_eyebrow => 'Com funciona';
+
+  @override
+  String get landing_como_funciona_titulo =>
+      'Tres passos per a un text accessible';
+
+  @override
+  String get landing_como_funciona_subtitulo =>
+      'Sense instal·lar res. Puja, tria i descarrega el document adaptat en el format que necessitis.';
+
+  @override
+  String get landing_paso_subir_titulo => 'Puja el teu document';
+
+  @override
+  String get landing_paso_subir_descripcion =>
+      'PDF, Word o una imatge escanejada. Tu tries què vols fer accessible.';
+
+  @override
+  String get landing_paso_elegir_titulo => 'Tria les adaptacions';
+
+  @override
+  String get landing_paso_elegir_descripcion =>
+      'Marca les que necessitis o carrega un perfil desat amb la teva configuració habitual.';
+
+  @override
+  String get landing_paso_descargar_titulo => 'Descarrega el resultat';
+
+  @override
+  String get landing_paso_descargar_descripcion =>
+      'Rep-lo en PDF, Word, àudio o braille. Llest per llegir, imprimir o compartir.';
 }

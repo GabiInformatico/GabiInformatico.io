@@ -54,5 +54,8 @@
   "landing_plan_premium_descripcion": "Perfecto para el día a día.",
   "landing_plan_premium_caracteristica_1": "Documentos ilimitados",
   "landing_plan_premium_caracteristica_2": "Múltiples perfiles de configuración",
-  "landing_plan_premium_boton": "Empezar con premium"
+  "landing_plan_premium_boton": "Empezar con premium",
+
+  "landing_cta_final_titulo": "Empieza a adaptar tus documentos hoy",
+  "landing_cta_final_subtitulo": "Crea tu cuenta gratuita y comprueba lo fácil que es hacer accesible cualquier texto."
 }

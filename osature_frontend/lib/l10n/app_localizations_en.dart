@@ -162,4 +162,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get landing_plan_premium_boton => 'Get started with premium';
+
+  @override
+  String get landing_cta_final_titulo => 'Start adapting your documents today';
+
+  @override
+  String get landing_cta_final_subtitulo =>
+      'Create your free account and see how easy it is to make any text accessible.';
 }

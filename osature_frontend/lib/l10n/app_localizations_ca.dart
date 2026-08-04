@@ -163,4 +163,12 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get landing_plan_premium_boton => 'Comença amb premium';
+
+  @override
+  String get landing_cta_final_titulo =>
+      'Comença a adaptar els teus documents avui';
+
+  @override
+  String get landing_cta_final_subtitulo =>
+      'Crea el teu compte gratuït i comprova com és de fàcil fer accessible qualsevol text.';
 }

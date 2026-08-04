@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/layout/app_shell.dart';
+import 'widgets/landing_cta_final.dart';
 import 'widgets/landing_header.dart';
 import 'widgets/landing_hero.dart';
 import 'widgets/landing_how_it_works.dart';
@@ -29,6 +30,7 @@ class LandingScreen extends StatelessWidget {
                 LandingHero(),
                 LandingHowItWorks(),
                 LandingServices(),
+                LandingCtaFinal(),
               ],
             ),
           ),

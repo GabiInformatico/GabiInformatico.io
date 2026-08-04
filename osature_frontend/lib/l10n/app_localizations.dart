@@ -387,6 +387,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Empezar con premium'**
   String get landing_plan_premium_boton;
+
+  /// No description provided for @landing_cta_final_titulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Empieza a adaptar tus documentos hoy'**
+  String get landing_cta_final_titulo;
+
+  /// No description provided for @landing_cta_final_subtitulo.
+  ///
+  /// In es, this message translates to:
+  /// **'Crea tu cuenta gratuita y comprueba lo fácil que es hacer accesible cualquier texto.'**
+  String get landing_cta_final_subtitulo;
 }
 
 class _AppLocalizationsDelegate

@@ -54,5 +54,8 @@
   "landing_plan_premium_descripcion": "Perfecte per al dia a dia.",
   "landing_plan_premium_caracteristica_1": "Documents il·limitats",
   "landing_plan_premium_caracteristica_2": "Múltiples perfils de configuració",
-  "landing_plan_premium_boton": "Comença amb premium"
+  "landing_plan_premium_boton": "Comença amb premium",
+
+  "landing_cta_final_titulo": "Comença a adaptar els teus documents avui",
+  "landing_cta_final_subtitulo": "Crea el teu compte gratuït i comprova com és de fàcil fer accessible qualsevol text."
 }

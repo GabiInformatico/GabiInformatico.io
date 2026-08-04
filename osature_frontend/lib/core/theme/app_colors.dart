@@ -18,6 +18,8 @@ class AppColors {
   static const Color bordeOscuro = Color(0xFFB9C9DC);
   // Fondo gris muy claro para las "lineas" de texto falso de la tarjeta.
   static const Color superficieAlt = Color(0xFFF6F9FD);
+  // Azul muy claro para texto sobre fondos oscuros (CTA final).
+  static const Color azulHielo = Color(0xFFE6F0FB);
   static const Color blanco = Colors.white;
 }
 

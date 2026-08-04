@@ -54,5 +54,8 @@
   "landing_plan_premium_descripcion": "Great for everyday use.",
   "landing_plan_premium_caracteristica_1": "Unlimited documents",
   "landing_plan_premium_caracteristica_2": "Multiple configuration profiles",
-  "landing_plan_premium_boton": "Get started with premium"
+  "landing_plan_premium_boton": "Get started with premium",
+
+  "landing_cta_final_titulo": "Start adapting your documents today",
+  "landing_cta_final_subtitulo": "Create your free account and see how easy it is to make any text accessible."
 }

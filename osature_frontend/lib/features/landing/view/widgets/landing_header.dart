@@ -47,7 +47,7 @@ class LandingHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _logo(),
+        _logo_sense_text(),
         // Flexible + scroll horizontal: si el menu no cabe entero por muy
         // poco, se desliza en vez de desbordar.
         Flexible(
@@ -79,7 +79,7 @@ class LandingHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _logo(),
+        _logo_sense_text(),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -92,8 +92,8 @@ class LandingHeader extends StatelessWidget {
     );
   }
 
-  Widget _logo() {
-    return Image.asset('assets/images/logo.png', height: 38);
+  Widget _logo_sense_text() {
+    return Image.asset('assets/images/logo_sense_lletra.png', height: 38);
   }
 
   // Boton cuadrado con el icono de hamburguesa (o de cerrar si ya esta

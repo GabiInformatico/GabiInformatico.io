@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
@@ -93,7 +94,7 @@ class LandingHeader extends StatelessWidget {
   }
 
   Widget _logo_sense_text() {
-    return Image.asset('assets/images/logo_sense_text.png', height: 38);
+    return SvgPicture.asset('assets/images/logo_sense_text.svg',  height: 38);
   }
 
   // Boton cuadrado con el icono de hamburguesa (o de cerrar si ya esta

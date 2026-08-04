@@ -93,7 +93,7 @@ class LandingHeader extends StatelessWidget {
   }
 
   Widget _logo_sense_text() {
-    return Image.asset('assets/images/logo_sense_lletra.png', height: 38);
+    return Image.asset('assets/images/logo_sense_text.png', height: 38);
   }
 
   // Boton cuadrado con el icono de hamburguesa (o de cerrar si ya esta

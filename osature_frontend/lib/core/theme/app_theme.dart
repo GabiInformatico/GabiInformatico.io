@@ -80,6 +80,14 @@ class AppTheme {
         height: 1.25,
         color: AppColors.azulOscuro,
       ),
+      // Titulos pequeños dentro de tarjetas (nombre de archivo...).
+      titleMedium: TextStyle(
+        fontFamily: 'Quicksand',
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
+        height: 1.3,
+        color: AppColors.azulOscuro,
+      ),
       // Texto de venta / parrafos destacados (subtitulo del hero...).
       bodyLarge: TextStyle(
         fontFamily: 'Rubik',
@@ -114,6 +122,13 @@ class AppTheme {
         fontSize: 14,
         fontWeight: FontWeight.w500,
         height: 1.2,
+      ),
+      // Texto de los chips (Texto simplificado, Espaciado ampliado...).
+      labelSmall: TextStyle(
+        fontFamily: 'Quicksand',
+        fontWeight: FontWeight.w600,
+        fontSize: 13,
+        color: AppColors.azulOscuro,
       ),
     );
   }

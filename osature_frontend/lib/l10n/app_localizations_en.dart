@@ -60,4 +60,19 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get landing_hero_nota =>
       'No card needed, start adapting in under a minute';
+
+  @override
+  String get landing_hero_ilustracion_archivo => 'worksheet.pdf';
+
+  @override
+  String get landing_hero_ilustracion_descripcion => 'Adapted for dyslexia';
+
+  @override
+  String get landing_hero_chip_texto_simplificado => 'Simplified text';
+
+  @override
+  String get landing_hero_chip_espaciado_ampliado => 'Wider spacing';
+
+  @override
+  String get landing_hero_chip_lectura_voz_alta => 'Read aloud';
 }

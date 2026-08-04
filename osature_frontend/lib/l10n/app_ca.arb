@@ -20,5 +20,11 @@
   "landing_hero_subtitulo": "Osature adapta textos, exàmens i fitxes de treball al format que millor s'ajusta a cada persona: la lletra, el ritme i els suports que necessita.",
   "landing_hero_cta_primario": "Crea un compte gratuït",
   "landing_hero_cta_secundario": "Veure com funciona",
-  "landing_hero_nota": "Sense targeta, comença a adaptar en menys d'un minut"
+  "landing_hero_nota": "Sense targeta, comença a adaptar en menys d'un minut",
+
+  "landing_hero_ilustracion_archivo": "fitxa_exercicis.pdf",
+  "landing_hero_ilustracion_descripcion": "Adaptat per a lectura fàcil",
+  "landing_hero_chip_texto_simplificado": "Text simplificat",
+  "landing_hero_chip_espaciado_ampliado": "Espaiat ampliat",
+  "landing_hero_chip_lectura_voz_alta": "Remarcat de paraules"
 }

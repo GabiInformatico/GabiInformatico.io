@@ -20,5 +20,11 @@
   "landing_hero_subtitulo": "Osature adapts texts, exams and worksheets to the format that best suits each person: the font, the pace and the support they need.",
   "landing_hero_cta_primario": "Create a free account",
   "landing_hero_cta_secundario": "See how it works",
-  "landing_hero_nota": "No card needed, start adapting in under a minute"
+  "landing_hero_nota": "No card needed, start adapting in under a minute",
+
+  "landing_hero_ilustracion_archivo": "worksheet.pdf",
+  "landing_hero_ilustracion_descripcion": "Adapted for easy read",
+  "landing_hero_chip_texto_simplificado": "Simplified text",
+  "landing_hero_chip_espaciado_ampliado": "Wider spacing",
+  "landing_hero_chip_lectura_voz_alta": "Highlighted text"
 }

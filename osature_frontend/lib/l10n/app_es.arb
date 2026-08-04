@@ -20,5 +20,11 @@
   "landing_hero_subtitulo": "Osature adapta textos, exámenes y fichas de trabajo al formato que mejor se ajusta a cada persona: la letra, el ritmo y los apoyos que necesita.",
   "landing_hero_cta_primario": "Crear cuenta gratis",
   "landing_hero_cta_secundario": "Ver cómo funciona",
-  "landing_hero_nota": "Sin tarjeta, empieza a adaptar en menos de un minuto"
+  "landing_hero_nota": "Sin tarjeta, empieza a adaptar en menos de un minuto",
+
+  "landing_hero_ilustracion_archivo": "ficha_ejercicios.pdf",
+  "landing_hero_ilustracion_descripcion": "Adaptado para lectura fácil",
+  "landing_hero_chip_texto_simplificado": "Texto simplificado",
+  "landing_hero_chip_espaciado_ampliado": "Espaciado ampliado",
+  "landing_hero_chip_lectura_voz_alta": "Resaltado de palabras"
 }

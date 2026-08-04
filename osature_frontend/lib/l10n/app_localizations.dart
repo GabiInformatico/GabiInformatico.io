@@ -201,6 +201,36 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Sin tarjeta, empieza a adaptar en menos de un minuto'**
   String get landing_hero_nota;
+
+  /// No description provided for @landing_hero_ilustracion_archivo.
+  ///
+  /// In es, this message translates to:
+  /// **'ficha_ejercicios.pdf'**
+  String get landing_hero_ilustracion_archivo;
+
+  /// No description provided for @landing_hero_ilustracion_descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Adaptado para dislexia'**
+  String get landing_hero_ilustracion_descripcion;
+
+  /// No description provided for @landing_hero_chip_texto_simplificado.
+  ///
+  /// In es, this message translates to:
+  /// **'Texto simplificado'**
+  String get landing_hero_chip_texto_simplificado;
+
+  /// No description provided for @landing_hero_chip_espaciado_ampliado.
+  ///
+  /// In es, this message translates to:
+  /// **'Espaciado ampliado'**
+  String get landing_hero_chip_espaciado_ampliado;
+
+  /// No description provided for @landing_hero_chip_lectura_voz_alta.
+  ///
+  /// In es, this message translates to:
+  /// **'Lectura en voz alta'**
+  String get landing_hero_chip_lectura_voz_alta;
 }
 
 class _AppLocalizationsDelegate

@@ -1,3 +1,6 @@
 * Tengo que hacer que el botón alto contraste funcione
 * Botones cómo funciona y servicios me tienen que llevar a las respectivas secciones
 * Hacer que iniciar sesión/registrarse pasen a ser Hola, usuario y el icono que sea
+* Sacar el header fuera en carpeta widgets comunes (la tengo que crear aún) porque se utiliza en todos los demás enlaces
+* Me queda hacer el último trozo de la landing que también tiene que ir en widgets comunes porque aparece siempre. Además, investigar como añadir enlace para que 
+  pulses y te envíe a las redes sociales y también hay que ver como hacer que se vea el docuemnto de politica de privacidad, cookies, etc.

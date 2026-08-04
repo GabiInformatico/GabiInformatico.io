@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 // Colores de la App
 class AppColors {
-  static const Color azul = Color(0xFF1A5FB4);
+  // Los 4 tonos oficiales de azul de Osature, de mas oscuro a mas claro.
+  static const Color azul = Color(0xFF2067D8);
+  static const Color azulMarca = Color(0xFF459CEB);
+  static const Color azulMedio = Color(0xFF7AB8FB);
+  static const Color azulSuave = Color(0xFFC1DEFF);
+
   static const Color azulOscuro = Color(0xFF0B3D70);
   static const Color azulClaro = Color(0xFFEAF3FF);
   // Fondo casi blanco con un toque de azul, para el degradado del hero.
   static const Color azulNiebla = Color(0xFFF4F9FF);
-  // Azul de marca (el del logo) y sus tonos claros, para el anillo
-  // decorativo del hero y los chips de la tarjeta de documento.
-  static const Color azulMarca = Color(0xFF509BF7);
-  static const Color azulMedio = Color(0xFFADD4FD);
-  static const Color azulSuave = Color(0xFFC7DFFF);
   static const Color texto = Color(0xFF17202B);
   static const Color textoClaro = Color(0xFF4C5763);
   static const Color borde = Color(0xFFDBE4EE);

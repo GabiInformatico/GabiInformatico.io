@@ -399,6 +399,72 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Crea tu cuenta gratuita y comprueba lo fácil que es hacer accesible cualquier texto.'**
   String get landing_cta_final_subtitulo;
+
+  /// No description provided for @landing_footer_producto.
+  ///
+  /// In es, this message translates to:
+  /// **'Producto'**
+  String get landing_footer_producto;
+
+  /// No description provided for @landing_footer_recursos.
+  ///
+  /// In es, this message translates to:
+  /// **'Recursos'**
+  String get landing_footer_recursos;
+
+  /// No description provided for @landing_footer_sobre_nosotros.
+  ///
+  /// In es, this message translates to:
+  /// **'Sobre nosotros'**
+  String get landing_footer_sobre_nosotros;
+
+  /// No description provided for @landing_footer_redes_label.
+  ///
+  /// In es, this message translates to:
+  /// **'Síguenos en redes sociales'**
+  String get landing_footer_redes_label;
+
+  /// No description provided for @landing_footer_red_tiktok.
+  ///
+  /// In es, this message translates to:
+  /// **'Osature en TikTok'**
+  String get landing_footer_red_tiktok;
+
+  /// No description provided for @landing_footer_red_instagram.
+  ///
+  /// In es, this message translates to:
+  /// **'Osature en Instagram'**
+  String get landing_footer_red_instagram;
+
+  /// No description provided for @landing_footer_red_correo.
+  ///
+  /// In es, this message translates to:
+  /// **'Escríbenos por correo'**
+  String get landing_footer_red_correo;
+
+  /// No description provided for @landing_footer_red_linkedin.
+  ///
+  /// In es, this message translates to:
+  /// **'Osature en LinkedIn'**
+  String get landing_footer_red_linkedin;
+
+  /// No description provided for @landing_footer_terminos.
+  ///
+  /// In es, this message translates to:
+  /// **'Términos y condiciones'**
+  String get landing_footer_terminos;
+
+  /// No description provided for @landing_footer_privacidad.
+  ///
+  /// In es, this message translates to:
+  /// **'Política de privacidad'**
+  String get landing_footer_privacidad;
+
+  /// No description provided for @landing_footer_cookies.
+  ///
+  /// In es, this message translates to:
+  /// **'Cookies'**
+  String get landing_footer_cookies;
 }
 
 class _AppLocalizationsDelegate

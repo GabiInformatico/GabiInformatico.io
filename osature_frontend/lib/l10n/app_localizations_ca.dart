@@ -171,4 +171,37 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get landing_cta_final_subtitulo =>
       'Crea el teu compte gratuït i comprova com és de fàcil fer accessible qualsevol text.';
+
+  @override
+  String get landing_footer_producto => 'Producte';
+
+  @override
+  String get landing_footer_recursos => 'Recursos';
+
+  @override
+  String get landing_footer_sobre_nosotros => 'Sobre nosaltres';
+
+  @override
+  String get landing_footer_redes_label => 'Segueix-nos a les xarxes socials';
+
+  @override
+  String get landing_footer_red_tiktok => 'Osature a TikTok';
+
+  @override
+  String get landing_footer_red_instagram => 'Osature a Instagram';
+
+  @override
+  String get landing_footer_red_correo => 'Escriu-nos per correu';
+
+  @override
+  String get landing_footer_red_linkedin => 'Osature a LinkedIn';
+
+  @override
+  String get landing_footer_terminos => 'Termes i condicions';
+
+  @override
+  String get landing_footer_privacidad => 'Política de privacitat';
+
+  @override
+  String get landing_footer_cookies => 'Cookies';
 }

@@ -57,5 +57,17 @@
   "landing_plan_premium_boton": "Comença amb premium",
 
   "landing_cta_final_titulo": "Comença a adaptar els teus documents avui",
-  "landing_cta_final_subtitulo": "Crea el teu compte gratuït i comprova com és de fàcil fer accessible qualsevol text."
+  "landing_cta_final_subtitulo": "Crea el teu compte gratuït i comprova com és de fàcil fer accessible qualsevol text.",
+
+  "landing_footer_producto": "Producte",
+  "landing_footer_recursos": "Recursos",
+  "landing_footer_sobre_nosotros": "Sobre nosaltres",
+  "landing_footer_redes_label": "Segueix-nos a les xarxes socials",
+  "landing_footer_red_tiktok": "Osature a TikTok",
+  "landing_footer_red_instagram": "Osature a Instagram",
+  "landing_footer_red_correo": "Escriu-nos per correu",
+  "landing_footer_red_linkedin": "Osature a LinkedIn",
+  "landing_footer_terminos": "Termes i condicions",
+  "landing_footer_privacidad": "Política de privacitat",
+  "landing_footer_cookies": "Cookies"
 }

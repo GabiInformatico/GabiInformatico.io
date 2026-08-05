@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../shared/widgets/ghost_button.dart';
+import '../../../../shared/widgets/osature_logo_sense_text.dart';
 import '../../../../shared/widgets/primary_button.dart';
 import '../../model/nav_link.dart';
 import '../../view_model/landing_view_model.dart';
@@ -48,7 +48,7 @@ class LandingHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _logo_sense_text(),
+        const OsatureLogo(height: 38),
         // Flexible + scroll horizontal: si el menu no cabe entero por muy
         // poco, se desliza en vez de desbordar.
         Flexible(
@@ -80,7 +80,7 @@ class LandingHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _logo_sense_text(),
+        const OsatureLogo(height: 38),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -91,10 +91,6 @@ class LandingHeader extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  Widget _logo_sense_text() {
-    return SvgPicture.asset('assets/images/logo_sense_text.svg',  height: 38);
   }
 
   // Boton cuadrado con el icono de hamburguesa (o de cerrar si ya esta

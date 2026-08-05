@@ -169,4 +169,37 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get landing_cta_final_subtitulo =>
       'Create your free account and see how easy it is to make any text accessible.';
+
+  @override
+  String get landing_footer_producto => 'Product';
+
+  @override
+  String get landing_footer_recursos => 'Resources';
+
+  @override
+  String get landing_footer_sobre_nosotros => 'About us';
+
+  @override
+  String get landing_footer_redes_label => 'Follow us on social media';
+
+  @override
+  String get landing_footer_red_tiktok => 'Osature on TikTok';
+
+  @override
+  String get landing_footer_red_instagram => 'Osature on Instagram';
+
+  @override
+  String get landing_footer_red_correo => 'Email us';
+
+  @override
+  String get landing_footer_red_linkedin => 'Osature on LinkedIn';
+
+  @override
+  String get landing_footer_terminos => 'Terms and conditions';
+
+  @override
+  String get landing_footer_privacidad => 'Privacy policy';
+
+  @override
+  String get landing_footer_cookies => 'Cookies';
 }

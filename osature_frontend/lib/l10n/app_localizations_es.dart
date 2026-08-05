@@ -170,4 +170,37 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get landing_cta_final_subtitulo =>
       'Crea tu cuenta gratuita y comprueba lo fácil que es hacer accesible cualquier texto.';
+
+  @override
+  String get landing_footer_producto => 'Producto';
+
+  @override
+  String get landing_footer_recursos => 'Recursos';
+
+  @override
+  String get landing_footer_sobre_nosotros => 'Sobre nosotros';
+
+  @override
+  String get landing_footer_redes_label => 'Síguenos en redes sociales';
+
+  @override
+  String get landing_footer_red_tiktok => 'Osature en TikTok';
+
+  @override
+  String get landing_footer_red_instagram => 'Osature en Instagram';
+
+  @override
+  String get landing_footer_red_correo => 'Escríbenos por correo';
+
+  @override
+  String get landing_footer_red_linkedin => 'Osature en LinkedIn';
+
+  @override
+  String get landing_footer_terminos => 'Términos y condiciones';
+
+  @override
+  String get landing_footer_privacidad => 'Política de privacidad';
+
+  @override
+  String get landing_footer_cookies => 'Cookies';
 }

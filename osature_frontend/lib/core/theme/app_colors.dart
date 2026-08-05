@@ -20,6 +20,8 @@ class AppColors {
   static const Color superficieAlt = Color(0xFFF6F9FD);
   // Azul muy claro para texto sobre fondos oscuros (CTA final).
   static const Color azulHielo = Color(0xFFE6F0FB);
+  // Azul apagado para los enlaces del pie, sobre el fondo oscuro.
+  static const Color azulPastel = Color(0xFFCFE1F6);
   static const Color blanco = Colors.white;
 }
 

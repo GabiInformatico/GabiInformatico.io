@@ -20,6 +20,8 @@ class NavLink {
         return l10n.landing_nav_casos_exito;
       case 'blog':
         return l10n.landing_nav_blog;
+      case 'sobre-nosotros':
+        return l10n.landing_footer_sobre_nosotros;
     }
     return '';
   }

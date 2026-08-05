@@ -57,5 +57,17 @@
   "landing_plan_premium_boton": "Get started with premium",
 
   "landing_cta_final_titulo": "Start adapting your documents today",
-  "landing_cta_final_subtitulo": "Create your free account and see how easy it is to make any text accessible."
+  "landing_cta_final_subtitulo": "Create your free account and see how easy it is to make any text accessible.",
+
+  "landing_footer_producto": "Product",
+  "landing_footer_recursos": "Resources",
+  "landing_footer_sobre_nosotros": "About us",
+  "landing_footer_redes_label": "Follow us on social media",
+  "landing_footer_red_tiktok": "Osature on TikTok",
+  "landing_footer_red_instagram": "Osature on Instagram",
+  "landing_footer_red_correo": "Email us",
+  "landing_footer_red_linkedin": "Osature on LinkedIn",
+  "landing_footer_terminos": "Terms and conditions",
+  "landing_footer_privacidad": "Privacy policy",
+  "landing_footer_cookies": "Cookies"
 }

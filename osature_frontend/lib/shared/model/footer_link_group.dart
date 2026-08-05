@@ -1,4 +1,4 @@
-import '../../../l10n/app_localizations.dart';
+import '../../l10n/app_localizations.dart';
 import 'nav_link.dart';
 
 // Una columna de enlaces del pie (Producto, Recursos...). Reutiliza

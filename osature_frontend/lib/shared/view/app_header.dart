@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../l10n/app_localizations.dart';
-import '../../../../shared/widgets/ghost_button.dart';
-import '../../../../shared/widgets/osature_logo_sense_text.dart';
-import '../../../../shared/widgets/primary_button.dart';
-import '../../model/nav_link.dart';
-import '../../view_model/landing_view_model.dart';
+import '../../core/theme/app_colors.dart';
+import '../../l10n/app_localizations.dart';
+import '../model/nav_link.dart';
+import '../view_model/app_header_view_model.dart';
+import 'ghost_button.dart';
+import 'osature_logo_sense_text.dart';
+import 'primary_button.dart';
 
-// Cabecera de la landing: logo, menu y botones de acceso.
+// Cabecera comun a todas las pantallas: logo, menu y botones de acceso.
 // En pantallas estrechas el menu de enlaces se esconde detras de una
-// hamburguesa (ver LandingMobileMenu para el desplegable).
-class LandingHeader extends StatelessWidget {
-  const LandingHeader({super.key});
+// hamburguesa (ver AppMobileMenu para el desplegable).
+class AppHeader extends StatelessWidget {
+  const AppHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class LandingHeader extends StatelessWidget {
   // En movil los enlaces se esconden: solo se ve el logo, el boton de
   // registrarse y la hamburguesa que abre el menu desplegable.
   Widget _cabeceraMovil(BuildContext context, AppLocalizations l10n) {
-    final viewModel = context.watch<LandingViewModel>();
+    final viewModel = context.watch<AppHeaderViewModel>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -95,7 +95,10 @@ class LandingHeader extends StatelessWidget {
 
   // Boton cuadrado con el icono de hamburguesa (o de cerrar si ya esta
   // abierto) que alterna el menu desplegable.
-  Widget _buildHamburguesa(LandingViewModel viewModel, AppLocalizations l10n) {
+  Widget _buildHamburguesa(
+    AppHeaderViewModel viewModel,
+    AppLocalizations l10n,
+  ) {
     final abierto = viewModel.menuAbierto;
     return Semantics(
       button: true,

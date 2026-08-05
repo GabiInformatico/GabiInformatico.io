@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../../../shared/widgets/section_header.dart';
+import '../../../../shared/view/section_heading.dart';
 import '../../model/landing_plan.dart';
 import 'landing_plan_card.dart';
 
@@ -32,7 +32,7 @@ class LandingServices extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 76),
           child: Column(
             children: [
-              SectionHeader(
+              SectionHeading(
                 eyebrow: l10n.landing_servicios_eyebrow,
                 titulo: l10n.landing_servicios_titulo,
                 subtitulo: l10n.landing_servicios_subtitulo,

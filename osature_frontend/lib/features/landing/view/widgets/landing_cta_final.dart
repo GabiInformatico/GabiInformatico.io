@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../../../shared/widgets/primary_button.dart';
+import '../../../../shared/view/primary_button.dart';
 
 // Ultimo bloque antes del pie: fondo con degradado, titulo y boton
 // destacado en blanco (invertido respecto al boton normal) para animar a

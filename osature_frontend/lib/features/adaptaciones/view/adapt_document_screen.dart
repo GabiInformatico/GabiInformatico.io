@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../shared/accessibility/accessibility_bar.dart';
+import '../../../shared/view/accessibility_bar.dart';
 import '../model/adaptation_option.dart';
 import 'widgets/adaptation_grid.dart';
 

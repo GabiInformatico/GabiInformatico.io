@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../accessibility/accessibility_bar.dart';
+import 'accessibility_bar.dart';
 
 // Envoltorio para las pantallas de la app: pone siempre la barra de
 // accesibilidad arriba del todo, para no tener que repetirla en cada

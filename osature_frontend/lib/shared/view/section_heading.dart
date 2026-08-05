@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-// Cabecera centrada de una seccion: etiqueta pequeña, titulo y texto de
-// apoyo. Se repite en varias secciones de la landing (Cómo funciona,
-// Servicios...), asi que va aqui para no duplicarla.
-class SectionHeader extends StatelessWidget {
-  const SectionHeader({
+// Cabecera centrada de una seccion de contenido: etiqueta pequeña,
+// titulo y texto de apoyo (no confundir con AppHeader, que es la barra
+// de navegacion de arriba del todo).
+class SectionHeading extends StatelessWidget {
+  const SectionHeading({
     super.key,
     required this.eyebrow,
     required this.titulo,

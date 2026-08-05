@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// El logo de Osature (sin el texto debajo). 
+// El logo de Osature (sin el texto debajo).
 class OsatureLogo extends StatelessWidget {
   const OsatureLogo({super.key, this.height = 38});
 

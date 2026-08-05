@@ -4,9 +4,9 @@ import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
 import 'features/adaptaciones/view_model/adapt_document_viewmodel.dart';
 import 'features/landing/view/landing_screen.dart';
-import 'features/landing/view_model/landing_view_model.dart';
 import 'l10n/app_localizations.dart';
-import 'shared/accessibility/accessibility_view_model.dart';
+import 'shared/view_model/accessibility_view_model.dart';
+import 'shared/view_model/app_header_view_model.dart';
 
 void main() {
   runApp(const OsatureApp());
@@ -22,7 +22,7 @@ class OsatureApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => AccessibilityViewModel()),
         ChangeNotifierProvider(create: (context) => AdaptDocumentViewModel()),
-        ChangeNotifierProvider(create: (context) => LandingViewModel()),
+        ChangeNotifierProvider(create: (context) => AppHeaderViewModel()),
       ],
       child: MaterialApp(
         title: 'Osature',

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../l10n/app_localizations.dart';
-import '../../model/nav_link.dart';
-import '../../view_model/landing_view_model.dart';
+import '../../core/theme/app_colors.dart';
+import '../../l10n/app_localizations.dart';
+import '../model/nav_link.dart';
+import '../view_model/app_header_view_model.dart';
 
 // Panel con los enlaces del menu, uno debajo de otro, que aparece pegado
 // a la cabecera cuando se abre la hamburguesa en movil. Se pinta por
 // encima del resto de la pagina, no la empuja hacia abajo.
-class LandingMobileMenu extends StatelessWidget {
-  const LandingMobileMenu({super.key});
+class AppMobileMenu extends StatelessWidget {
+  const AppMobileMenu({super.key});
 
   // Alto de la cabecera (74 + el borde de abajo), para saber donde
   // empieza el desplegable.
@@ -18,7 +18,7 @@ class LandingMobileMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = context.watch<LandingViewModel>();
+    final viewModel = context.watch<AppHeaderViewModel>();
     if (!viewModel.menuAbierto) return const SizedBox.shrink();
 
     final l10n = AppLocalizations.of(context);

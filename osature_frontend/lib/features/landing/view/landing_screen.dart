@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/layout/app_shell.dart';
+import '../../../shared/view/app_footer.dart';
+import '../../../shared/view/app_header.dart';
+import '../../../shared/view/app_mobile_menu.dart';
+import '../../../shared/view/app_shell.dart';
 import 'widgets/landing_cta_final.dart';
-import 'widgets/landing_footer.dart';
-import 'widgets/landing_header.dart';
 import 'widgets/landing_hero.dart';
 import 'widgets/landing_how_it_works.dart';
-import 'widgets/landing_mobile_menu.dart';
 import 'widgets/landing_services.dart';
 
 // Pantalla de la landing publica de Osature.
@@ -27,16 +27,16 @@ class LandingScreen extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-                LandingHeader(),
+                AppHeader(),
                 LandingHero(),
                 LandingHowItWorks(),
                 LandingServices(),
                 LandingCtaFinal(),
-                LandingFooter(),
+                AppFooter(),
               ],
             ),
           ),
-          LandingMobileMenu(),
+          AppMobileMenu(),
         ],
       ),
     );

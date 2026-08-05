@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../l10n/app_localizations.dart';
-import 'accessibility_view_model.dart';
+import '../view_model/accessibility_view_model.dart';
 
 // Barra azul oscura de arriba del todo.
 class AccessibilityBar extends StatelessWidget {

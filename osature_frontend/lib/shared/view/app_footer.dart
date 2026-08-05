@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../l10n/app_localizations.dart';
-import '../../../../shared/widgets/osature_logo_sense_text.dart';
-import '../../model/footer_link_group.dart';
+import '../../core/theme/app_colors.dart';
+import '../../l10n/app_localizations.dart';
+import '../model/footer_link_group.dart';
+import 'osature_logo_sense_text.dart';
 
-// Pie de la landing: logo + redes, columnas de enlaces y la barra legal
-// de abajo del todo con el copyright.
-class LandingFooter extends StatelessWidget {
-  const LandingFooter({super.key});
+// Pie comun a todas las pantallas: logo + redes, columnas de enlaces y
+// la barra legal de abajo del todo con el copyright.
+class AppFooter extends StatelessWidget {
+  const AppFooter({super.key});
 
   @override
   Widget build(BuildContext context) {

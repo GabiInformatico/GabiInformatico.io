@@ -1,4 +1,4 @@
-import '../../../l10n/app_localizations.dart';
+import '../../l10n/app_localizations.dart';
 
 // Un enlace del menu de la cabecera. Guarda un id, no el texto: el texto
 // sale siempre de l10n para poder traducirlo.

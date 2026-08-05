@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
-import '../../../../shared/widgets/ghost_button.dart';
-import '../../../../shared/widgets/primary_button.dart';
+import '../../../../shared/view/ghost_button.dart';
+import '../../../../shared/view/primary_button.dart';
 import '../../model/landing_plan.dart';
 
 // Tarjeta de un plan del bloque "Servicios". El plan destacado lleva

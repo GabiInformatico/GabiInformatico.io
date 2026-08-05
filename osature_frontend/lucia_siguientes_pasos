@@ -1,5 +1,4 @@
 * Tengo que hacer que el botón alto contraste funcione
 * Hacer que funcione la navegación, de momento no va ninguna
 * Hacer que iniciar sesión/registrarse pasen a ser Hola, usuario y el icono que sea
-* Sacar el header y el footer fuera en carpeta widgets comunes (la tengo que crear aún) porque se utiliza en todos los demás enlaces 
 * Investigar como añadir enlace para que pulses y te envíe a las redes sociales y también hay que ver como hacer que se vea el docuemnto de politica de privacidad cookies, etc.

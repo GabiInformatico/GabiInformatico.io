@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/theme/app_colors.dart';
@@ -35,7 +36,7 @@ class AppHeader extends StatelessWidget {
               final esMovil = constraints.maxWidth < AppMedidas.anchoMovil;
               return esMovil
                   ? _cabeceraMovil(context, l10n, colores)
-                  : _cabeceraEscritorio(l10n, colores);
+                  : _cabeceraEscritorio(context, l10n, colores);
             },
           ),
         ),
@@ -45,7 +46,11 @@ class AppHeader extends StatelessWidget {
 
   // Logo a la izquierda, menu en medio y botones a la derecha, igual que
   // en el mockup (nav con justify-content: space-between).
-  Widget _cabeceraEscritorio(AppLocalizations l10n, AppColors colores) {
+  Widget _cabeceraEscritorio(
+    BuildContext context,
+    AppLocalizations l10n,
+    AppColors colores,
+  ) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -65,7 +70,10 @@ class AppHeader extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            GhostButton(texto: l10n.landing_iniciar_sesion, onPressed: () {}),
+            GhostButton(
+              texto: l10n.landing_iniciar_sesion,
+              onPressed: () => context.go('/adaptaciones'),
+            ),
             const SizedBox(width: 10),
             PrimaryButton(texto: l10n.landing_registrarse, onPressed: () {}),
           ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'core/router/app_router.dart';
 import 'core/theme/app_colors.dart';
 import 'core/theme/app_theme.dart';
 import 'features/adaptaciones/view_model/adapt_document_viewmodel.dart';
-import 'features/landing/view/landing_screen.dart';
 import 'l10n/app_localizations.dart';
 import 'shared/view_model/accessibility_view_model.dart';
 import 'shared/view_model/app_header_view_model.dart';
@@ -29,13 +29,13 @@ class OsatureApp extends StatelessWidget {
       // es lo que hace falta para leer la paleta.
       child: Builder(
         builder: (context) {
-          return MaterialApp(
+          return MaterialApp.router(
             title: 'Osature',
             debugShowCheckedModeBanner: false,
             theme: AppTheme.build(AppColors.of(context)),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: const LandingScreen(),
+            routerConfig: appRouter,
           );
         },
       ),

@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
-   sodipodi:docname="logos.svg"
+   sodipodi:docname="logo_sense_text.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,13 +24,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.79401373"
-     inkscape:cx="627.82289"
-     inkscape:cy="894.19108"
+     inkscape:zoom="1.2840705"
+     inkscape:cx="159.25916"
+     inkscape:cy="67.753287"
      inkscape:window-width="1272"
      inkscape:window-height="741"
      inkscape:window-x="131"
-     inkscape:window-y="49"
+     inkscape:window-y="33"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg1">
     <inkscape:page
@@ -113,7 +113,7 @@
        xlink:href="#linearGradient19"
        id="linearGradient1"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.1711909,0,0,1.1711909,-25.842415,-314.64732)"
+       gradientTransform="matrix(0.74624905,0,0,0.74624905,0.22404782,-196.56923)"
        x1="67.812477"
        y1="268.25226"
        x2="67.742989"
@@ -123,7 +123,7 @@
        xlink:href="#linearGradient23"
        id="linearGradient2"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.1819688,0,0,0.85829576,-34.534223,-197.71334)"
+       gradientTransform="matrix(0.75311642,0,0,0.5468813,-5.3141222,-122.06227)"
        x1="30.574129"
        y1="255.38708"
        x2="104.02708"
@@ -137,38 +137,38 @@
        x2="101.24358"
        y2="192.47292"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.097593,0,0,1.097593,-101.89424,-210.68896)" />
+       gradientTransform="matrix(0.69935459,0,0,0.69935459,-48.233981,-130.32996)" />
   </defs>
   <text
      xml:space="preserve"
-     style="font-size:25.8746px;line-height:1;font-family:Sathu;-inkscape-font-specification:Sathu;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient1);fill-opacity:1;stroke-width:0.404294"
-     x="53.485966"
-     y="18.834677"
+     style="font-size:16.4865px;line-height:1;font-family:Sathu;-inkscape-font-specification:Sathu;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient1);fill-opacity:1;stroke-width:0.257604"
+     x="50.769802"
+     y="15.915874"
      id="text8-7-5-2"
      inkscape:export-filename="logo_sense_text.png"
      inkscape:export-xdpi="1000"
      inkscape:export-ydpi="1000"><tspan
        sodipodi:role="line"
        id="tspan8-1-8-27"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient1);stroke-width:0.404294"
-       x="53.485966"
-       y="18.834677">sature</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient1);stroke-width:0.257604"
+       x="50.769802"
+       y="15.915874">sature</tspan></text>
   <rect
-     style="fill:url(#linearGradient2);fill-opacity:1;stroke:none;stroke-width:0.326002"
+     style="fill:url(#linearGradient2);fill-opacity:1;stroke:none;stroke-width:0.207719"
      id="rect11-7-2-3"
-     width="86.819084"
-     height="1.143517"
-     x="1.6034222"
-     y="20.912542" />
+     width="55.318615"
+     height="0.72861606"
+     x="17.711742"
+     y="17.23983" />
   <text
      xml:space="preserve"
-     style="font-size:28.3998px;line-height:1;font-family:Galvji;-inkscape-font-specification:Galvji;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient4);stroke-width:0.290404"
-     x="9.2299862"
-     y="19.255056"
+     style="font-size:18.0955px;line-height:1;font-family:Galvji;-inkscape-font-specification:Galvji;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient4);stroke-width:0.185037"
+     x="22.571171"
+     y="16.183727"
      id="text1"><tspan
        sodipodi:role="line"
        id="tspan1"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.3998px;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient4);stroke-width:0.290404"
-       x="9.2299862"
-       y="19.255056">O</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.0955px;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient4);stroke-width:0.185037"
+       x="22.571171"
+       y="16.183727">O</tspan></text>
 </svg>

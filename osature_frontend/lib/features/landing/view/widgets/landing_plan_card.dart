@@ -17,20 +17,21 @@ class LandingPlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     final tarjeta = Container(
       width: double.infinity,
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
-        color: AppColors.blanco,
+        color: colores.blanco,
         borderRadius: BorderRadius.circular(AppMedidas.radioGrande),
         border: Border.all(
-          color: plan.destacado ? AppColors.azulMarca : AppColors.borde,
+          color: plan.destacado ? colores.azulMarca : colores.borde,
           width: plan.destacado ? 2 : 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.azulOscuro.withValues(
+            color: colores.azulOscuro.withValues(
               alpha: plan.destacado ? 0.14 : 0.06,
             ),
             blurRadius: plan.destacado ? 36 : 24,
@@ -62,7 +63,7 @@ class LandingPlanCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             plan.descripcion(l10n),
-            style: estilos.bodyMedium?.copyWith(color: AppColors.textoClaro),
+            style: estilos.bodyMedium?.copyWith(color: colores.textoClaro),
           ),
           const SizedBox(height: 18),
           for (final caracteristica in plan.caracteristicas(l10n))
@@ -71,7 +72,7 @@ class LandingPlanCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.check, size: 18, color: AppColors.azul),
+                  Icon(Icons.check, size: 18, color: colores.azul),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(caracteristica, style: estilos.bodyMedium),
@@ -103,12 +104,12 @@ class LandingPlanCard extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
             decoration: BoxDecoration(
-              color: AppColors.azul,
+              color: colores.azul,
               borderRadius: BorderRadius.circular(999),
             ),
             child: Text(
               badge,
-              style: estilos.labelSmall?.copyWith(color: AppColors.blanco),
+              style: estilos.labelSmall?.copyWith(color: colores.blanco),
             ),
           ),
         ),

@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 class AccessibilityViewModel extends ChangeNotifier {
   bool altoContraste = false;
 
-  // TODO: de momento no cambia los colores, solo el boton.
   void cambiarContraste() {
     altoContraste = !altoContraste;
     notifyListeners();

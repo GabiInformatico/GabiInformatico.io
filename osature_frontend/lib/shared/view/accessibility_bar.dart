@@ -14,9 +14,10 @@ class AccessibilityBar extends StatelessWidget {
     final viewModel = context.watch<AccessibilityViewModel>();
     final activo = viewModel.altoContraste;
     final l10n = AppLocalizations.of(context);
+    final colores = AppColors.of(context);
 
     return Container(
-      color: AppColors.azulOscuro,
+      color: colores.azulOscuro,
       child: Center(
         child: Container(
           width: AppMedidas.anchoMaximo,
@@ -32,6 +33,7 @@ class AccessibilityBar extends StatelessWidget {
                   viewModel.cambiarContraste,
                   l10n,
                   Theme.of(context).textTheme,
+                  colores,
                 ),
               ),
             ],
@@ -47,19 +49,20 @@ class AccessibilityBar extends StatelessWidget {
     VoidCallback alPulsar,
     AppLocalizations l10n,
     TextTheme estilos,
+    AppColors colores,
   ) {
     return TextButton.icon(
       onPressed: alPulsar,
       icon: const Icon(Icons.contrast, size: 15),
       label: Text(l10n.accesibilidad_alto_contraste),
       style: TextButton.styleFrom(
-        foregroundColor: activo ? AppColors.azulOscuro : AppColors.blanco,
-        backgroundColor: activo ? AppColors.blanco : Colors.transparent,
+        foregroundColor: activo ? colores.azulOscuro : colores.blanco,
+        backgroundColor: activo ? colores.blanco : Colors.transparent,
         textStyle: estilos.labelMedium,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         minimumSize: const Size(0, 32),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        side: const BorderSide(color: AppColors.blanco),
+        side: BorderSide(color: colores.blanco),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );

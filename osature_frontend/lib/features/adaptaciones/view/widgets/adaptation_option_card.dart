@@ -17,6 +17,7 @@ class AdaptationOptionCard extends StatelessWidget {
     final estilos = Theme.of(context).textTheme;
     final viewModel = context.watch<AdaptDocumentViewModel>();
     final marcada = viewModel.estaMarcada(adaptacion.id);
+    final colores = AppColors.of(context);
 
     return MergeSemantics(
       child: InkWell(
@@ -29,10 +30,10 @@ class AdaptationOptionCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
             // Cuando esta marcada se pone azul clarito.
-            color: marcada ? AppColors.azulClaro : AppColors.blanco,
+            color: marcada ? colores.azulClaro : colores.blanco,
             borderRadius: BorderRadius.circular(AppMedidas.radio),
             border: Border.all(
-              color: marcada ? AppColors.azul : AppColors.borde,
+              color: marcada ? colores.azul : colores.borde,
               width: 1.5,
             ),
           ),
@@ -62,7 +63,7 @@ class AdaptationOptionCard extends StatelessWidget {
                         adaptacion.description,
                         style: estilos.bodyMedium?.copyWith(
                           fontSize: 14,
-                          color: AppColors.textoClaro,
+                          color: colores.textoClaro,
                         ),
                       ),
                   ],

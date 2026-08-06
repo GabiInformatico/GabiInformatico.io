@@ -16,14 +16,15 @@ class LandingHero extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [AppColors.azulNiebla, AppColors.blanco],
-          stops: [0, 0.7],
+          colors: [colores.azulNiebla, colores.blanco],
+          stops: const [0, 0.7],
         ),
       ),
       child: Center(
@@ -33,7 +34,7 @@ class LandingHero extends StatelessWidget {
           child: LayoutBuilder(
             builder: (context, constraints) {
               final apilado = constraints.maxWidth < AppMedidas.anchoTablet;
-              final texto = _textoHero(l10n, estilos);
+              final texto = _textoHero(l10n, estilos, colores);
 
               if (apilado) {
                 return Column(
@@ -64,7 +65,11 @@ class LandingHero extends StatelessWidget {
 
   // Titulo, subtitulo, botones y nota. Es la mitad izquierda del hero en
   // escritorio, y va arriba del todo cuando se apila en movil.
-  Widget _textoHero(AppLocalizations l10n, TextTheme estilos) {
+  Widget _textoHero(
+    AppLocalizations l10n,
+    TextTheme estilos,
+    AppColors colores,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -99,11 +104,7 @@ class LandingHero extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.check_circle_outline,
-              size: 18,
-              color: AppColors.azul,
-            ),
+            Icon(Icons.check_circle_outline, size: 18, color: colores.azul),
             const SizedBox(width: 8),
             Flexible(
               child: Text(l10n.landing_hero_nota, style: estilos.bodySmall),

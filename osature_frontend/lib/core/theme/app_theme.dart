@@ -16,33 +16,33 @@ class AppTheme {
     height: 1.1,
   );
 
-  static ThemeData build() {
+  static ThemeData build(AppColors colores) {
     return ThemeData(
       useMaterial3: true,
       fontFamily: 'Rubik',
-      scaffoldBackgroundColor: AppColors.blanco,
+      scaffoldBackgroundColor: colores.blanco,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.azul,
-        primary: AppColors.azul,
-        surface: AppColors.blanco,
-        onSurface: AppColors.texto,
+        seedColor: colores.azul,
+        primary: colores.azul,
+        surface: colores.blanco,
+        onSurface: colores.texto,
       ),
-      textTheme: textos(),
+      textTheme: textos(colores),
       // Casilla Tarjetas Adaptaciones.
-      checkboxTheme: const CheckboxThemeData(
-        side: BorderSide(color: AppColors.bordeOscuro, width: 1.5),
+      checkboxTheme: CheckboxThemeData(
+        side: BorderSide(color: colores.bordeOscuro, width: 1.5),
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
       // Boton con texto (enlaces del menu...). El texto ya sale de
       // labelLarge, aqui solo hace falta el color.
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: AppColors.azul),
+        style: TextButton.styleFrom(foregroundColor: colores.azul),
       ),
       // Boton relleno de azul (Registrarse, Crear cuenta...).
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.azul,
-          foregroundColor: AppColors.blanco,
+          backgroundColor: colores.azul,
+          foregroundColor: colores.blanco,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppMedidas.radio),
@@ -52,8 +52,8 @@ class AppTheme {
       // Boton con borde (Iniciar sesion, Ver como funciona...).
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.azulOscuro,
-          side: const BorderSide(color: AppColors.bordeOscuro, width: 1.5),
+          foregroundColor: colores.azulOscuro,
+          side: BorderSide(color: colores.bordeOscuro, width: 1.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppMedidas.radio),
           ),
@@ -62,15 +62,15 @@ class AppTheme {
     );
   }
 
-  static TextTheme textos() {
-    return const TextTheme(
+  static TextTheme textos(AppColors colores) {
+    return TextTheme(
       // Titulo grande del hero.
       headlineLarge: TextStyle(
         fontFamily: 'Quicksand',
         fontWeight: FontWeight.w700,
         fontSize: 40,
         height: 1.2,
-        color: AppColors.azulOscuro,
+        color: colores.azulOscuro,
       ),
       // Titulo de las secciones (Cómo funciona, Servicios...).
       headlineMedium: TextStyle(
@@ -78,7 +78,7 @@ class AppTheme {
         fontWeight: FontWeight.w700,
         fontSize: 34,
         height: 1.2,
-        color: AppColors.azulOscuro,
+        color: colores.azulOscuro,
       ),
       // Titulos de pantalla o de seccion.
       titleLarge: TextStyle(
@@ -86,7 +86,7 @@ class AppTheme {
         fontWeight: FontWeight.w600,
         fontSize: 19,
         height: 1.25,
-        color: AppColors.azulOscuro,
+        color: colores.azulOscuro,
       ),
       // Titulos pequeños dentro de tarjetas (nombre de archivo...).
       titleMedium: TextStyle(
@@ -94,7 +94,7 @@ class AppTheme {
         fontWeight: FontWeight.w600,
         fontSize: 16,
         height: 1.3,
-        color: AppColors.azulOscuro,
+        color: colores.azulOscuro,
       ),
       // Etiqueta pequeña en mayusculas encima de un titulo de seccion.
       titleSmall: TextStyle(
@@ -102,28 +102,28 @@ class AppTheme {
         fontWeight: FontWeight.w900,
         fontSize: 13,
         letterSpacing: 1,
-        color: AppColors.azul,
+        color: colores.azul,
       ),
       // Texto de venta / parrafos destacados (subtitulo del hero...).
       bodyLarge: TextStyle(
         fontFamily: 'Rubik',
         fontSize: 19,
         height: 1.5,
-        color: AppColors.textoClaro,
+        color: colores.textoClaro,
       ),
       // Texto normal de la app.
       bodyMedium: TextStyle(
         fontFamily: 'Rubik',
         fontSize: 15,
         height: 1.5,
-        color: AppColors.texto,
+        color: colores.texto,
       ),
       // Notas y texto pequeño de apoyo.
       bodySmall: TextStyle(
         fontFamily: 'Rubik',
         fontSize: 14,
         height: 1.4,
-        color: AppColors.textoClaro,
+        color: colores.textoClaro,
       ),
       // Texto de los botones grandes de accion (Registrarse, CTAs...).
       labelLarge: TextStyle(
@@ -144,7 +144,7 @@ class AppTheme {
         fontFamily: 'Quicksand',
         fontWeight: FontWeight.w600,
         fontSize: 13,
-        color: AppColors.azulOscuro,
+        color: colores.azulOscuro,
       ),
     );
   }

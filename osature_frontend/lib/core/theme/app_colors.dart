@@ -1,28 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../shared/view_model/accessibility_view_model.dart';
 
 // Colores de la App
 class AppColors {
-  // Los 4 tonos oficiales de azul de Osature, de mas oscuro a mas claro.
-  static const Color azul = Color(0xFF2067D8);
-  static const Color azulMarca = Color(0xFF459CEB);
-  static const Color azulMedio = Color(0xFF7AB8FB);
-  static const Color azulSuave = Color(0xFFC1DEFF);
+  const AppColors._({
+    required this.azul,
+    required this.azulMarca,
+    required this.azulMedio,
+    required this.azulSuave,
+    required this.azulOscuro,
+    required this.azulClaro,
+    required this.azulNiebla,
+    required this.texto,
+    required this.textoClaro,
+    required this.borde,
+    required this.bordeOscuro,
+    required this.superficieAlt,
+    required this.azulHielo,
+    required this.azulPastel,
+    required this.blanco,
+  });
 
-  static const Color azulOscuro = Color(0xFF0B3D70);
-  static const Color azulClaro = Color(0xFFEAF3FF);
+  // Los 4 tonos oficiales de azul de Osature, de mas oscuro a mas claro.
+  final Color azul;
+  final Color azulMarca;
+  final Color azulMedio;
+  final Color azulSuave;
+
+  final Color azulOscuro;
+  final Color azulClaro;
   // Fondo casi blanco con un toque de azul, para el degradado del hero.
-  static const Color azulNiebla = Color(0xFFF4F9FF);
-  static const Color texto = Color(0xFF17202B);
-  static const Color textoClaro = Color(0xFF4C5763);
-  static const Color borde = Color(0xFFDBE4EE);
-  static const Color bordeOscuro = Color(0xFFB9C9DC);
+  final Color azulNiebla;
+  final Color texto;
+  final Color textoClaro;
+  final Color borde;
+  final Color bordeOscuro;
   // Fondo gris muy claro para las "lineas" de texto falso de la tarjeta.
-  static const Color superficieAlt = Color(0xFFF6F9FD);
+  final Color superficieAlt;
   // Azul muy claro para texto sobre fondos oscuros (CTA final).
-  static const Color azulHielo = Color(0xFFE6F0FB);
+  final Color azulHielo;
   // Azul apagado para los enlaces del pie, sobre el fondo oscuro.
-  static const Color azulPastel = Color(0xFFCFE1F6);
-  static const Color blanco = Colors.white;
+  final Color azulPastel;
+  final Color blanco;
+
+  static const AppColors normal = AppColors._(
+    azul: Color(0xFF2067D8),
+    azulMarca: Color(0xFF459CEB),
+    azulMedio: Color(0xFF7AB8FB),
+    azulSuave: Color(0xFFC1DEFF),
+    azulOscuro: Color(0xFF0B3D70),
+    azulClaro: Color(0xFFEAF3FF),
+    azulNiebla: Color(0xFFF4F9FF),
+    texto: Color(0xFF17202B),
+    textoClaro: Color(0xFF4C5763),
+    borde: Color(0xFFDBE4EE),
+    bordeOscuro: Color(0xFFB9C9DC),
+    superficieAlt: Color(0xFFF6F9FD),
+    azulHielo: Color(0xFFE6F0FB),
+    azulPastel: Color(0xFFCFE1F6),
+    blanco: Colors.white,
+  );
+
+  // Alto contraste, con los mismos valores que el body.alto-contraste de
+  // los mockups: el texto se va a negro, los azules oscuros se oscurecen
+  // mas, los bordes se ven de verdad y los fondos con tinte azul pasan a
+  // blanco. Los azules de marca (el anillo, las lineas de la tarjeta) se
+  // quedan como estan, igual que en el mockup.
+  static const AppColors contraste = AppColors._(
+    azul: Color(0xFF0F477F),
+    azulMarca: Color(0xFF459CEB),
+    azulMedio: Color(0xFF7AB8FB),
+    azulSuave: Color(0xFFC1DEFF),
+    azulOscuro: Color(0xFF062D54),
+    azulClaro: Colors.white,
+    azulNiebla: Colors.white,
+    texto: Colors.black,
+    textoClaro: Color(0xFF14202C),
+    borde: Color(0xFF6B7C8F),
+    bordeOscuro: Color(0xFF33475B),
+    superficieAlt: Colors.white,
+    azulHielo: Color(0xFFE6F0FB),
+    azulPastel: Color(0xFFCFE1F6),
+    blanco: Colors.white,
+  );
+
+  // La paleta que toca segun el boton de la barra de accesibilidad.
+  static AppColors of(BuildContext context) {
+    final viewModel = context.watch<AccessibilityViewModel>();
+    return viewModel.altoContraste ? contraste : normal;
+  }
 }
 
 // Medidas

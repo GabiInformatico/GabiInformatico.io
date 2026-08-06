@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'core/theme/app_colors.dart';
 import 'core/theme/app_theme.dart';
 import 'features/adaptaciones/view_model/adapt_document_viewmodel.dart';
 import 'features/landing/view/landing_screen.dart';
@@ -24,13 +25,19 @@ class OsatureApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AdaptDocumentViewModel()),
         ChangeNotifierProvider(create: (context) => AppHeaderViewModel()),
       ],
-      child: MaterialApp(
-        title: 'Osature',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.build(),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: const LandingScreen(),
+      // El Builder da un context que ya esta debajo de los providers, que
+      // es lo que hace falta para leer la paleta.
+      child: Builder(
+        builder: (context) {
+          return MaterialApp(
+            title: 'Osature',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.build(AppColors.of(context)),
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: const LandingScreen(),
+          );
+        },
       ),
     );
   }

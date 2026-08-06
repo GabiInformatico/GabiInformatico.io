@@ -59,11 +59,12 @@ class AdaptDocumentScreen extends StatelessWidget {
   // Barra blanca con el nombre, las patnallas y el usuario
   Widget _buildMenu(BuildContext context) {
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.blanco,
-        border: Border(bottom: BorderSide(color: AppColors.borde)),
+      decoration: BoxDecoration(
+        color: colores.blanco,
+        border: Border(bottom: BorderSide(color: colores.borde)),
       ),
       child: Center(
         child: Container(
@@ -74,15 +75,15 @@ class AdaptDocumentScreen extends StatelessWidget {
             children: [
               Text('Osature', style: estilos.titleLarge),
               const SizedBox(width: 32),
-              _buildEnlace('Adaptar', true),
-              _buildEnlace('Consejos', false),
-              _buildEnlace('Mis perfiles', false),
+              _buildEnlace('Adaptar', true, colores),
+              _buildEnlace('Consejos', false, colores),
+              _buildEnlace('Mis perfiles', false, colores),
               const Spacer(),
               Text('Hola', style: estilos.bodyMedium),
               const SizedBox(width: 10),
               CircleAvatar(
                 radius: 18,
-                backgroundColor: AppColors.azulClaro,
+                backgroundColor: colores.azulClaro,
                 child: Text('A', style: estilos.titleLarge),
               ),
             ],
@@ -93,14 +94,14 @@ class AdaptDocumentScreen extends StatelessWidget {
   }
 
   // Un enlace del menu. El de la pagina en la que estamos lleva fondo azul.
-  Widget _buildEnlace(String texto, bool esLaPaginaActual) {
+  Widget _buildEnlace(String texto, bool esLaPaginaActual, AppColors colores) {
     return TextButton(
       onPressed: () {},
       style: TextButton.styleFrom(
-        backgroundColor: esLaPaginaActual ? AppColors.azulClaro : null,
+        backgroundColor: esLaPaginaActual ? colores.azulClaro : null,
         foregroundColor: esLaPaginaActual
-            ? AppColors.azulOscuro
-            : AppColors.textoClaro,
+            ? colores.azulOscuro
+            : colores.textoClaro,
       ),
       child: Text(texto),
     );

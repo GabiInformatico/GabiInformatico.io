@@ -22,20 +22,21 @@ class AppMobileMenu extends StatelessWidget {
     if (!viewModel.menuAbierto) return const SizedBox.shrink();
 
     final l10n = AppLocalizations.of(context);
+    final colores = AppColors.of(context);
 
     return Positioned(
       top: _altoCabecera,
       left: 0,
       right: 0,
       child: Container(
-        decoration: const BoxDecoration(
-          color: AppColors.blanco,
-          border: Border(bottom: BorderSide(color: AppColors.borde)),
+        decoration: BoxDecoration(
+          color: colores.blanco,
+          border: Border(bottom: BorderSide(color: colores.borde)),
           boxShadow: [
             BoxShadow(
-              color: Color(0x1F0B3D70),
+              color: colores.azulOscuro.withValues(alpha: 0.12),
               blurRadius: 20,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
         ),
@@ -43,7 +44,7 @@ class AppMobileMenu extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: landingNavLinks
-              .map((enlace) => _buildEnlace(enlace, l10n))
+              .map((enlace) => _buildEnlace(enlace, l10n, colores))
               .toList(),
         ),
       ),
@@ -52,11 +53,15 @@ class AppMobileMenu extends StatelessWidget {
 
   // Enlace del menu desplegable: uno debajo de otro y ocupando todo el
   // ancho para que sea facil de pulsar.
-  Widget _buildEnlace(NavLink enlace, AppLocalizations l10n) {
+  Widget _buildEnlace(
+    NavLink enlace,
+    AppLocalizations l10n,
+    AppColors colores,
+  ) {
     return TextButton(
       onPressed: () {},
       style: TextButton.styleFrom(
-        foregroundColor: AppColors.texto,
+        foregroundColor: colores.texto,
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
       ),

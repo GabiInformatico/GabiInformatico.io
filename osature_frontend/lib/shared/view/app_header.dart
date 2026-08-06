@@ -18,11 +18,12 @@ class AppHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colores = AppColors.of(context);
 
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.blanco,
-        border: Border(bottom: BorderSide(color: AppColors.borde)),
+      decoration: BoxDecoration(
+        color: colores.blanco,
+        border: Border(bottom: BorderSide(color: colores.borde)),
       ),
       child: Center(
         child: Container(
@@ -33,8 +34,8 @@ class AppHeader extends StatelessWidget {
             builder: (context, constraints) {
               final esMovil = constraints.maxWidth < AppMedidas.anchoMovil;
               return esMovil
-                  ? _cabeceraMovil(context, l10n)
-                  : _cabeceraEscritorio(l10n);
+                  ? _cabeceraMovil(context, l10n, colores)
+                  : _cabeceraEscritorio(l10n, colores);
             },
           ),
         ),
@@ -44,7 +45,7 @@ class AppHeader extends StatelessWidget {
 
   // Logo a la izquierda, menu en medio y botones a la derecha, igual que
   // en el mockup (nav con justify-content: space-between).
-  Widget _cabeceraEscritorio(AppLocalizations l10n) {
+  Widget _cabeceraEscritorio(AppLocalizations l10n, AppColors colores) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -56,7 +57,7 @@ class AppHeader extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: landingNavLinks
-                  .map((enlace) => _buildEnlace(enlace, l10n))
+                  .map((enlace) => _buildEnlace(enlace, l10n, colores))
                   .toList(),
             ),
           ),
@@ -75,7 +76,11 @@ class AppHeader extends StatelessWidget {
 
   // En movil los enlaces se esconden: solo se ve el logo, el boton de
   // registrarse y la hamburguesa que abre el menu desplegable.
-  Widget _cabeceraMovil(BuildContext context, AppLocalizations l10n) {
+  Widget _cabeceraMovil(
+    BuildContext context,
+    AppLocalizations l10n,
+    AppColors colores,
+  ) {
     final viewModel = context.watch<AppHeaderViewModel>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +91,7 @@ class AppHeader extends StatelessWidget {
           children: [
             PrimaryButton(texto: l10n.landing_registrarse, onPressed: () {}),
             const SizedBox(width: 10),
-            _buildHamburguesa(viewModel, l10n),
+            _buildHamburguesa(viewModel, l10n, colores),
           ],
         ),
       ],
@@ -98,6 +103,7 @@ class AppHeader extends StatelessWidget {
   Widget _buildHamburguesa(
     AppHeaderViewModel viewModel,
     AppLocalizations l10n,
+    AppColors colores,
   ) {
     final abierto = viewModel.menuAbierto;
     return Semantics(
@@ -113,7 +119,7 @@ class AppHeader extends StatelessWidget {
           height: 40,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.bordeOscuro, width: 1.5),
+            border: Border.all(color: colores.bordeOscuro, width: 1.5),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(abierto ? Icons.close : Icons.menu, size: 22),
@@ -123,10 +129,14 @@ class AppHeader extends StatelessWidget {
   }
 
   // Enlace de texto del menu, sin fondo.
-  Widget _buildEnlace(NavLink enlace, AppLocalizations l10n) {
+  Widget _buildEnlace(
+    NavLink enlace,
+    AppLocalizations l10n,
+    AppColors colores,
+  ) {
     return TextButton(
       onPressed: () {},
-      style: TextButton.styleFrom(foregroundColor: AppColors.textoClaro),
+      style: TextButton.styleFrom(foregroundColor: colores.textoClaro),
       child: Text(enlace.texto(l10n)),
     );
   }

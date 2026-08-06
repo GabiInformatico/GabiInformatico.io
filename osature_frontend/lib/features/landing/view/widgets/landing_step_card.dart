@@ -22,16 +22,17 @@ class LandingStepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return Container(
       padding: const EdgeInsets.all(28),
       decoration: BoxDecoration(
-        color: AppColors.blanco,
-        border: Border.all(color: AppColors.borde),
+        color: colores.blanco,
+        border: Border.all(color: colores.borde),
         borderRadius: BorderRadius.circular(AppMedidas.radioGrande),
         boxShadow: [
           BoxShadow(
-            color: AppColors.azulOscuro.withValues(alpha: 0.06),
+            color: colores.azulOscuro.withValues(alpha: 0.06),
             blurRadius: 24,
             offset: const Offset(0, 8),
           ),
@@ -46,19 +47,19 @@ class LandingStepCard extends StatelessWidget {
             height: 34,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: AppColors.azul,
+              color: colores.azul,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
               '$numero',
               style: estilos.labelSmall?.copyWith(
-                color: AppColors.blanco,
+                color: colores.blanco,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
           const SizedBox(height: 18),
-          Icon(_iconos[paso.id], size: 30, color: AppColors.azul),
+          Icon(_iconos[paso.id], size: 30, color: colores.azul),
           const SizedBox(height: 12),
           Text(paso.titulo(l10n), style: estilos.titleLarge),
           const SizedBox(height: 6),
@@ -66,7 +67,7 @@ class LandingStepCard extends StatelessWidget {
             height: 45,
             child: Text(
               paso.descripcion(l10n),
-              style: estilos.bodyMedium?.copyWith(color: AppColors.textoClaro),
+              style: estilos.bodyMedium?.copyWith(color: colores.textoClaro),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),

@@ -15,9 +15,10 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return Container(
-      color: AppColors.azulOscuro,
+      color: colores.azulOscuro,
       child: Center(
         child: Container(
           width: AppMedidas.anchoMaximo,
@@ -32,10 +33,10 @@ class AppFooter extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _marca(l10n, estilos),
+                        _marca(l10n, estilos, colores),
                         const SizedBox(height: 32),
                         for (final grupo in footerLinkGroups) ...[
-                          _columnaEnlaces(grupo, l10n, estilos),
+                          _columnaEnlaces(grupo, l10n, estilos, colores),
                           const SizedBox(height: 32),
                         ],
                       ],
@@ -45,7 +46,7 @@ class AppFooter extends StatelessWidget {
                   return Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(flex: 7, child: _marca(l10n, estilos)),
+                      Expanded(flex: 7, child: _marca(l10n, estilos, colores)),
                       const SizedBox(width: 32),
                       Expanded(
                         flex: 5,
@@ -53,6 +54,7 @@ class AppFooter extends StatelessWidget {
                           footerLinkGroups[0],
                           l10n,
                           estilos,
+                          colores,
                         ),
                       ),
                       const SizedBox(width: 32),
@@ -62,6 +64,7 @@ class AppFooter extends StatelessWidget {
                           footerLinkGroups[1],
                           l10n,
                           estilos,
+                          colores,
                         ),
                       ),
                     ],
@@ -69,7 +72,7 @@ class AppFooter extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 40),
-              _legal(l10n, estilos),
+              _legal(l10n, estilos, colores),
             ],
           ),
         ),
@@ -79,7 +82,7 @@ class AppFooter extends StatelessWidget {
 
   // Logo arriba y redes sociales debajo, centrados entre si (el que sea
   // mas ancho de los dos manda, y el otro se centra respecto a el).
-  Widget _marca(AppLocalizations l10n, TextTheme estilos) {
+  Widget _marca(AppLocalizations l10n, TextTheme estilos, AppColors colores) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -94,21 +97,25 @@ class AppFooter extends StatelessWidget {
               _redSocial(
                 FontAwesomeIcons.tiktok,
                 l10n.landing_footer_red_tiktok,
+                colores,
               ),
               const SizedBox(width: 12),
               _redSocial(
                 FontAwesomeIcons.instagram,
                 l10n.landing_footer_red_instagram,
+                colores,
               ),
               const SizedBox(width: 12),
               _redSocial(
                 FontAwesomeIcons.envelope,
                 l10n.landing_footer_red_correo,
+                colores,
               ),
               const SizedBox(width: 12),
               _redSocial(
                 FontAwesomeIcons.linkedin,
                 l10n.landing_footer_red_linkedin,
+                colores,
               ),
             ],
           ),
@@ -118,7 +125,7 @@ class AppFooter extends StatelessWidget {
   }
 
   // Boton circular de una red social, con el logo real de cada una.
-  Widget _redSocial(FaIconData icono, String etiqueta) {
+  Widget _redSocial(FaIconData icono, String etiqueta, AppColors colores) {
     return Tooltip(
       message: etiqueta,
       child: InkWell(
@@ -130,9 +137,9 @@ class AppFooter extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: AppColors.blanco.withValues(alpha: 0.3)),
+            border: Border.all(color: colores.blanco.withValues(alpha: 0.3)),
           ),
-          child: FaIcon(icono, size: 15, color: AppColors.azulPastel),
+          child: FaIcon(icono, size: 15, color: colores.azulPastel),
         ),
       ),
     );
@@ -143,6 +150,7 @@ class AppFooter extends StatelessWidget {
     FooterLinkGroup grupo,
     AppLocalizations l10n,
     TextTheme estilos,
+    AppColors colores,
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,7 +159,7 @@ class AppFooter extends StatelessWidget {
         Text(
           grupo.titulo(l10n),
           style: estilos.titleMedium?.copyWith(
-            color: AppColors.blanco,
+            color: colores.blanco,
             fontSize: 15,
           ),
         ),
@@ -163,9 +171,7 @@ class AppFooter extends StatelessWidget {
               onTap: () {},
               child: Text(
                 enlace.texto(l10n),
-                style: estilos.bodyMedium?.copyWith(
-                  color: AppColors.azulPastel,
-                ),
+                style: estilos.bodyMedium?.copyWith(color: colores.azulPastel),
               ),
             ),
           ),
@@ -176,16 +182,16 @@ class AppFooter extends StatelessWidget {
   // Barra de abajo del todo: copyright y enlaces legales. Wrap para que
   // en pantallas estrechas los enlaces bajen debajo del copyright en vez
   // de desbordar.
-  Widget _legal(AppLocalizations l10n, TextTheme estilos) {
+  Widget _legal(AppLocalizations l10n, TextTheme estilos, AppColors colores) {
     final estiloLegal = estilos.bodySmall?.copyWith(
-      color: AppColors.azulPastel.withValues(alpha: 0.8),
+      color: colores.azulPastel.withValues(alpha: 0.8),
     );
 
     return Container(
       padding: const EdgeInsets.only(top: 22),
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: AppColors.blanco.withValues(alpha: 0.16)),
+          top: BorderSide(color: colores.blanco.withValues(alpha: 0.16)),
         ),
       ),
       // SizedBox a todo el ancho: un Wrap no se estira solo, y sin ancho

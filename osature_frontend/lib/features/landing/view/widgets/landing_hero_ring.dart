@@ -18,13 +18,17 @@ class LandingHeroRing extends StatelessWidget {
       child: SizedBox(
         width: diametro,
         height: diametro,
-        child: CustomPaint(painter: _RingPainter()),
+        child: CustomPaint(painter: _RingPainter(AppColors.of(context))),
       ),
     );
   }
 }
 
 class _RingPainter extends CustomPainter {
+  _RingPainter(this.colores);
+
+  final AppColors colores;
+
   @override
   void paint(Canvas canvas, Size size) {
     final centro = size.center(Offset.zero);
@@ -36,12 +40,12 @@ class _RingPainter extends CustomPainter {
 
     final degradado = SweepGradient(
       transform: const GradientRotation(210 * math.pi / 180),
-      colors: const [
-        AppColors.azulSuave,
-        AppColors.azulMedio,
-        AppColors.azulMarca,
-        AppColors.azulMedio,
-        AppColors.azulSuave,
+      colors: [
+        colores.azulSuave,
+        colores.azulMedio,
+        colores.azulMarca,
+        colores.azulMedio,
+        colores.azulSuave,
       ],
     );
 
@@ -55,6 +59,9 @@ class _RingPainter extends CustomPainter {
     canvas.drawCircle(centro, radioTrazo, pintura);
   }
 
+  // Solo hay que volver a pintarlo si ha cambiado la paleta.
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _RingPainter oldDelegate) {
+    return oldDelegate.colores != colores;
+  }
 }

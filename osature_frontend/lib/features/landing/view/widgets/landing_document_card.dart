@@ -13,18 +13,19 @@ class LandingDocumentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 400),
       child: Container(
         padding: const EdgeInsets.all(22),
         decoration: BoxDecoration(
-          color: AppColors.blanco,
-          border: Border.all(color: AppColors.borde),
+          color: colores.blanco,
+          border: Border.all(color: colores.borde),
           borderRadius: BorderRadius.circular(AppMedidas.radioGrande),
           boxShadow: [
             BoxShadow(
-              color: AppColors.azulOscuro.withValues(alpha: 0.12),
+              color: colores.azulOscuro.withValues(alpha: 0.12),
               blurRadius: 40,
               offset: const Offset(0, 12),
             ),
@@ -41,13 +42,13 @@ class LandingDocumentCard extends StatelessWidget {
                   height: 38,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: AppColors.azulClaro,
+                    color: colores.azulClaro,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.insert_drive_file_outlined,
                     size: 20,
-                    color: AppColors.azul,
+                    color: colores.azul,
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -71,19 +72,31 @@ class LandingDocumentCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            _linea(ancho: 0.9, destacada: true),
-            _linea(ancho: 0.7),
-            _linea(ancho: 0.9),
-            _linea(ancho: 0.5, destacada: true),
-            _linea(ancho: 0.7),
+            _linea(colores, ancho: 0.9, destacada: true),
+            _linea(colores, ancho: 0.7),
+            _linea(colores, ancho: 0.9),
+            _linea(colores, ancho: 0.5, destacada: true),
+            _linea(colores, ancho: 0.7),
             const SizedBox(height: 18),
             Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
-                _chip(l10n.landing_hero_chip_texto_simplificado, estilos),
-                _chip(l10n.landing_hero_chip_espaciado_ampliado, estilos),
-                _chip(l10n.landing_hero_chip_lectura_voz_alta, estilos),
+                _chip(
+                  l10n.landing_hero_chip_texto_simplificado,
+                  estilos,
+                  colores,
+                ),
+                _chip(
+                  l10n.landing_hero_chip_espaciado_ampliado,
+                  estilos,
+                  colores,
+                ),
+                _chip(
+                  l10n.landing_hero_chip_lectura_voz_alta,
+                  estilos,
+                  colores,
+                ),
               ],
             ),
           ],
@@ -94,7 +107,11 @@ class LandingDocumentCard extends StatelessWidget {
 
   // Una "linea" de texto falso. Las destacadas simulan una palabra
   // resaltada dentro del texto adaptado.
-  Widget _linea({required double ancho, bool destacada = false}) {
+  Widget _linea(
+    AppColors colores, {
+    required double ancho,
+    bool destacada = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.5),
       child: FractionallySizedBox(
@@ -103,7 +120,7 @@ class LandingDocumentCard extends StatelessWidget {
         child: Container(
           height: 12,
           decoration: BoxDecoration(
-            color: destacada ? AppColors.azulSuave : AppColors.superficieAlt,
+            color: destacada ? colores.azulSuave : colores.superficieAlt,
             borderRadius: BorderRadius.circular(6),
           ),
         ),
@@ -111,12 +128,12 @@ class LandingDocumentCard extends StatelessWidget {
     );
   }
 
-  Widget _chip(String texto, TextTheme estilos) {
+  Widget _chip(String texto, TextTheme estilos, AppColors colores) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       decoration: BoxDecoration(
-        color: AppColors.azulClaro,
-        border: Border.all(color: AppColors.azulSuave),
+        color: colores.azulClaro,
+        border: Border.all(color: colores.azulSuave),
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(texto, style: estilos.labelSmall),

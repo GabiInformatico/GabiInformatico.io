@@ -14,17 +14,16 @@ class LandingServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colores = AppColors.of(context);
 
     final tarjetas = [
       for (final plan in landingPlans) LandingPlanCard(plan: plan),
     ];
 
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.superficieAlt,
-        border: Border.symmetric(
-          horizontal: BorderSide(color: AppColors.borde),
-        ),
+      decoration: BoxDecoration(
+        color: colores.superficieAlt,
+        border: Border.symmetric(horizontal: BorderSide(color: colores.borde)),
       ),
       child: Center(
         child: Container(

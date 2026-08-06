@@ -14,13 +14,14 @@ class LandingCtaFinal extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final estilos = Theme.of(context).textTheme;
+    final colores = AppColors.of(context);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [AppColors.azulOscuro, AppColors.azul],
+          colors: [colores.azulOscuro, colores.azul],
         ),
       ),
       child: Center(
@@ -31,9 +32,7 @@ class LandingCtaFinal extends StatelessWidget {
             children: [
               Text(
                 l10n.landing_cta_final_titulo,
-                style: estilos.headlineMedium?.copyWith(
-                  color: AppColors.blanco,
-                ),
+                style: estilos.headlineMedium?.copyWith(color: colores.blanco),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 14),
@@ -41,9 +40,7 @@ class LandingCtaFinal extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: 480),
                 child: Text(
                   l10n.landing_cta_final_subtitulo,
-                  style: estilos.bodyLarge?.copyWith(
-                    color: AppColors.azulHielo,
-                  ),
+                  style: estilos.bodyLarge?.copyWith(color: colores.azulHielo),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -52,8 +49,8 @@ class LandingCtaFinal extends StatelessWidget {
                 texto: l10n.landing_hero_cta_primario,
                 onPressed: () {},
                 grande: true,
-                colorFondo: AppColors.blanco,
-                colorTexto: AppColors.azul,
+                colorFondo: colores.blanco,
+                colorTexto: colores.azul,
               ),
             ],
           ),

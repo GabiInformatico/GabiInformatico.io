@@ -39,7 +39,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get landing_registrarse => 'Registra\'t';
 
   @override
-  String get landing_abrir_menu => 'Obre el menú';
+  String get landing_abrir_menu => 'Obri el menú';
 
   @override
   String get landing_cerrar_menu => 'Tanca el menú';

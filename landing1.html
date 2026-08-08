@@ -1,0 +1,57 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Qué es esto
+
+Osature es una web (Flutter Web) que adapta documentos —textos, exámenes, fichas— a formatos de lectura accesible. El proyecto está en fase de maquetado: se están portando a Flutter unos mockups HTML previos, pantalla por pantalla.
+
+El repo tiene dos partes:
+
+- `osature_frontend/` — la app Flutter. **Todo el trabajo de código vive aquí**; los comandos se ejecutan desde este directorio, no desde la raíz.
+- `*.html` en la raíz (`landing.html`, `adaptaciones.html`, `login.html`, `mis-perfiles.html`, `blog.html`, `casos-de-exito.html`, `preguntas-frecuentes.html`, `sobre-nosotros.html`) — los mockups HTML/CSS de referencia. **No son código de producción**: son la fuente de verdad del diseño. Al implementar una pantalla nueva, mira primero su `.html` para colores, espaciados, orden de secciones y textos.
+
+## Comandos
+
+Desde `osature_frontend/`:
+
+```bash
+flutter pub get
+flutter run -d web-server --web-port 8765   # servidor de desarrollo (ver nota abajo)
+flutter run -d chrome                       # abre Chrome directamente
+flutter analyze                             # lint (flutter_lints)
+flutter build web
+flutter gen-l10n                            # regenera lib/l10n/app_localizations*.dart
+```
+
+`flutter run` regenera las localizaciones automáticamente (`generate: true` en `pubspec.yaml`); `gen-l10n` a mano solo hace falta si quieres los getters sin arrancar la app.
+
+No hay directorio `test/` ni tests todavía. Si se añaden: `flutter test`, y para uno solo `flutter test test/foo_test.dart --plain-name "nombre del test"`.
+
+`osature_frontend/.claude/launch.json` apunta a `C:\Programas instalados\flutter\bin\flutter.bat`, que ya no existe en esta máquina; el SDK está en `C:\Users\gabim\flutter\bin\flutter.bat` (y `flutter` está en el PATH).
+
+## Arquitectura
+
+**MVVM con Provider.** Los ViewModels son `ChangeNotifier` registrados en el `MultiProvider` de `lib/main.dart`; las vistas los consumen con `context.watch<T>()` y llaman a sus métodos. No hay capa de datos ni backend todavía: los ViewModels solo guardan estado de UI en memoria.
+
+Dos ejes de organización dentro de `lib/`:
+
+- `features/<feature>/` — cada pantalla, con subcarpetas `model/`, `view/` (+ `view/widgets/`) y `view_model/`.
+- `shared/` — misma estructura (`model/`, `view/`, `view_model/`), para lo que usan varias pantallas: `AppShell`, `AppHeader`, `AppFooter`, `AppMobileMenu`, `AccessibilityBar`, botones (`PrimaryButton`, `GhostButton`), `SectionHeading`.
+- `core/theme/` — `AppColors` (paleta + `AppMedidas` con radios y breakpoints) y `AppTheme`.
+
+Una pantalla se envuelve en `AppShell`, que fija la `AccessibilityBar` arriba del todo. La landing además mete su contenido en un `Stack` para que `AppMobileMenu` (último hijo) se pinte por encima del scroll.
+
+`main.dart` monta `LandingScreen` como `home` y **no hay routing**: los `onPressed` de la cabecera, el menú y el footer están vacíos, y `AdaptDocumentScreen` existe pero no es alcanzable desde la UI. Enlazar las pantallas es trabajo pendiente.
+
+## Convenciones del código
+
+- **Los estilos de texto salen siempre del tema.** Nunca pongas `fontFamily` ni `fontSize` a mano en una vista: usa `Theme.of(context).textTheme.<estilo>` (y `.copyWith()` si hace falta ajustar). Cada slot del `TextTheme` en `app_theme.dart` lleva un comentario diciendo para qué es. Quicksand para titulares y UI, Rubik para texto corrido.
+- **Los colores salen de `AppColors`**, y los anchos/radios/breakpoints de `AppMedidas` (`anchoMaximo` 1120, `anchoMovil` 760, `anchoTablet` 900). El responsive se hace con `LayoutBuilder` comparando contra esos breakpoints.
+- **Todo el texto visible pasa por l10n.** Se traduce a es (plantilla), en y ca — los tres `.arb` de `lib/l10n/` deben quedar con las mismas claves. Las claves siguen el patrón `<pantalla>_<seccion>_<elemento>` (`landing_hero_titulo`). En las vistas: `final l10n = AppLocalizations.of(context);`. Los modelos guardan un `id` y traducen con un método que recibe `l10n` (ver `NavLink`), nunca literales.
+- **El código de dominio está en español** (nombres de clases de UI en inglés al estilo Flutter, pero campos, métodos, variables y comentarios en español: `altoContraste`, `cambiarContraste`, `adaptacionesMarcadas`). Los comentarios explican el porqué en tono llano; mantén ese registro.
+- Los elementos interactivos no estándar se envuelven en `Semantics` con `label`/`button`/`toggled` — es una app de accesibilidad, esto no es opcional.
+
+## Pendientes conocidos
+
+`osature_frontend/TODO` y `osature_frontend/lucia_siguientes_pasos` llevan la lista viva de tareas. Lo más gordo: el botón de alto contraste todavía no cambia colores (solo alterna el flag en `AccessibilityViewModel`), no funciona ninguna navegación, y falta el estado de sesión iniciada en la cabecera.

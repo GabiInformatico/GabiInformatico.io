@@ -12,8 +12,34 @@ class AdaptationGrid extends StatelessWidget {
   // Hueco entre tarjetas
   static const double hueco = 12;
 
+  // Por debajo de este ancho las tarjetas van en una sola columna.
+  static const double anchoDosColumnas = 680;
+
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < anchoDosColumnas) {
+          return _buildUnaColumna();
+        }
+        return _buildDosColumnas();
+      },
+    );
+  }
+
+  Widget _buildUnaColumna() {
+    return Column(
+      children: [
+        for (final adaptacion in adaptaciones)
+          Padding(
+            padding: const EdgeInsets.only(bottom: hueco),
+            child: AdaptationOptionCard(adaptacion: adaptacion),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildDosColumnas() {
     final filas = <Widget>[];
 
     // Voy cogiendo las adaptaciones de dos en dos y hago una fila con

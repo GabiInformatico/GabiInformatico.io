@@ -30,7 +30,7 @@ class AdaptationOptionCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
             // Cuando esta marcada se pone azul clarito.
-            color: marcada ? colores.azulClaro : colores.blanco,
+            color: marcada ? colores.azulNiebla : colores.blanco,
             borderRadius: BorderRadius.circular(AppMedidas.radio),
             border: Border.all(
               color: marcada ? colores.azul : colores.borde,

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osature | Mis perfiles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul: #509bf7;
+    --azul-claro: #add4fd;
+    --azul-suave: #c7dfff;
+    --azul-tinte: #eaf3ff;
+    --azul-tinte2: #f4f9ff;
+    --azul-accion: #1a5fb4;
+    --azul-accion-hov: #124a91;
+    --tinta: #0b3d70;
+
+    --texto: #17202b;
+    --texto-suave: #4c5763;
+    --borde: #dbe4ee;
+    --borde-fuerte: #b9c9dc;
+    --fondo: #ffffff;
+    --superficie: #ffffff;
+
+    --exito-fondo: #e9f7ee;
+    --exito-borde: #a7dcb8;
+    --exito-texto: #1b6b39;
+
+    --radio: 12px;
+    --radio-g: 18px;
+    --contenedor: 1120px;
+  }
+
+  body.alto-contraste{
+    --texto:#000; --texto-suave:#14202c; --tinta:#062d54;
+    --azul-accion:#0f477f; --borde:#6b7c8f; --borde-fuerte:#33475b;
+    --azul-tinte:#fff; --azul-tinte2:#fff;
+  }
+
+  *{ box-sizing:border-box; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  body{
+    margin:0; font-family:'Rubik', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    font-size:1.0625rem; line-height:1.6; color:var(--texto); background:var(--fondo);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Quicksand', system-ui, sans-serif; color:var(--tinta); line-height:1.2; margin:0; letter-spacing:-.01em; }
+  h1{ font-size:clamp(1.7rem, 3.2vw, 2.1rem); font-weight:700; }
+  h2{ font-size:1.2rem; font-weight:600; }
+  p{ margin:0; }
+  a{ color:var(--azul-accion); }
+  img{ max-width:100%; display:block; }
+
+  .contenedor{ max-width:var(--contenedor); margin:0 auto; padding:0 24px; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible, label:focus-within{
+    outline:3px solid var(--azul-accion); outline-offset:2px; border-radius:6px;
+  }
+  .saltar{ position:absolute; left:16px; top:-60px; z-index:100; background:var(--azul-accion); color:#fff;
+    padding:10px 16px; border-radius:var(--radio); font-weight:600; text-decoration:none; transition:top .15s ease; }
+  .saltar:focus{ top:12px; }
+
+  .barra-util{ background:var(--tinta); color:#fff; }
+  .barra-util .contenedor{ display:flex; align-items:center; justify-content:flex-end; gap:18px; min-height:40px; flex-wrap:wrap; }
+  .barra-util button{ font-family:inherit; cursor:pointer; color:#fff; background:transparent;
+    border:1px solid rgba(255,255,255,.45); border-radius:8px; padding:3px 10px; font-size:.85rem; font-weight:500;
+    display:inline-flex; align-items:center; gap:6px; line-height:1; }
+  .barra-util button:hover{ background:rgba(255,255,255,.14); }
+  .barra-util button[aria-pressed="true"]{ background:#fff; color:var(--tinta); border-color:#fff; }
+
+  header.app{ position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--borde); }
+  body.alto-contraste header.app{ background:#fff; }
+  .app-nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:68px; }
+  .marca img{ height:36px; width:auto; }
+  .app-menu{ display:flex; gap:4px; list-style:none; margin:0; padding:0; }
+  .app-menu a{ text-decoration:none; color:var(--texto-suave); font-weight:500; font-size:.98rem; padding:8px 14px; border-radius:8px; }
+  .app-menu a:hover{ color:var(--tinta); background:var(--azul-tinte); }
+  .app-menu a[aria-current="page"]{ color:var(--tinta); background:var(--azul-tinte); font-weight:600; }
+  .usuario{ display:flex; align-items:center; gap:10px; }
+  .avatar{ width:36px; height:36px; border-radius:50%; background:var(--azul-tinte); color:var(--azul-accion);
+    font-family:'Quicksand',sans-serif; font-weight:700; display:flex; align-items:center; justify-content:center; border:1px solid var(--azul-suave); }
+  .usuario .nombre{ font-weight:500; font-size:.95rem; }
+
+  .btn{ font-family:'Quicksand', sans-serif; font-weight:600; font-size:1rem; cursor:pointer;
+    border-radius:var(--radio); padding:11px 20px; border:1.5px solid transparent; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px; line-height:1.1;
+    transition:background .15s ease, transform .05s ease, border-color .15s ease; }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primario{ background:var(--azul-accion); color:#fff; }
+  .btn-primario:hover{ background:var(--azul-accion-hov); }
+  .btn-fantasma{ background:var(--superficie); color:var(--tinta); border-color:var(--borde-fuerte); }
+  .btn-fantasma:hover{ background:var(--azul-tinte); border-color:var(--azul); }
+  .btn-texto{ background:transparent; color:var(--azul-accion); border-color:transparent; padding:8px 10px; font-size:.95rem; }
+  .btn-texto:hover{ background:var(--azul-tinte); }
+  .btn-peq{ padding:8px 14px; font-size:.92rem; }
+
+  .titulo-pagina{ padding:34px 0 0; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .titulo-pagina p{ color:var(--texto-suave); margin-top:6px; }
+
+  /* Perfiles guardados */
+  .perfiles{ padding:26px 0 20px; display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+  .perfil{ border:1.5px solid var(--borde); border-radius:var(--radio-g); background:var(--superficie); padding:20px; }
+  .perfil-cab{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px; }
+  .perfil-cab h2{ font-size:1.05rem; }
+  .perfil .etiquetas{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+  .etiqueta{ font-size:.8rem; font-weight:600; color:var(--tinta); background:var(--azul-tinte);
+    border:1px solid var(--azul-suave); border-radius:999px; padding:4px 10px; }
+  .perfil-acciones{ display:flex; gap:10px; }
+
+  /* Formulario nuevo perfil / edición */
+  .panel-form{ border-top:1px solid var(--borde); padding:30px 0 60px; margin-top:10px; }
+  .panel-form.oculto{ display:none; }
+  .form-cab{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+  .campo-nombre{ max-width:360px; margin-bottom:22px; }
+  .campo-nombre label{ display:block; font-weight:600; font-size:.9rem; margin-bottom:6px; }
+  .campo-nombre input{ width:100%; font-family:inherit; font-size:1rem; padding:11px 14px; border:1.5px solid var(--borde-fuerte); border-radius:var(--radio); background:var(--superficie); color:var(--texto); }
+
+  .rejilla-op{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .opcion{ display:flex; gap:12px; align-items:flex-start; border:1.5px solid var(--borde); border-radius:var(--radio);
+    padding:14px 16px; background:var(--superficie); cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .opcion:hover{ border-color:var(--azul); }
+  .opcion:has(input:checked){ border-color:var(--azul-accion); background:var(--azul-tinte2); }
+  .opcion input{ width:20px; height:20px; margin-top:2px; flex:none; accent-color:var(--azul-accion); cursor:pointer; }
+  .opcion .tit{ font-weight:600; color:var(--texto); display:block; }
+  .opcion .det{ font-size:.88rem; color:var(--texto-suave); }
+
+  .form-acciones{ display:flex; gap:12px; margin-top:26px; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  @media (max-width: 680px){
+    .app-menu{ display:none; }
+    .usuario .nombre{ display:none; }
+    .perfiles{ grid-template-columns:1fr; }
+    .rejilla-op{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+<div class="barra-util">
+  <div class="contenedor">
+    <button type="button" id="btn-contraste" aria-pressed="false">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20V2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Alto contraste
+    </button>
+  </div>
+</div>
+
+<header class="app">
+  <div class="contenedor">
+    <nav class="app-nav" aria-label="Navegación de la aplicación">
+      <a class="marca" href="landing.html" aria-label="Osature, ir al inicio">
+        <img src="logo-osature-nuevo.png" alt="Osature">
+      </a>
+      <ul class="app-menu">
+        <li><a href="adaptaciones.html">Adaptar</a></li>
+        <li><a href="adaptaciones.html">Consejos</a></li>
+        <li><a href="#" aria-current="page">Mis perfiles</a></li>
+      </ul>
+      <div class="usuario">
+        <span class="nombre">Hola, Lucía</span>
+        <span class="avatar" aria-hidden="true">L</span>
+        <a class="btn btn-texto" href="landing.html">Salir</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+    <div class="titulo-pagina">
+      <div>
+        <h1>Mis perfiles</h1>
+        <p>Consulta y edita tus perfiles guardados, o crea uno nuevo con tus adaptaciones favoritas.</p>
+      </div>
+      <button class="btn btn-primario" id="btn-nuevo-perfil" type="button">Crear nuevo perfil</button>
+    </div>
+
+    <!-- PERFILES GUARDADOS -->
+    <div class="perfiles" id="lista-perfiles">
+      <article class="perfil" data-perfil="lectura-facil">
+        <div class="perfil-cab">
+          <h2>Lectura fácil</h2>
+        </div>
+        <div class="etiquetas">
+          <span class="etiqueta">Texto simplificado</span>
+          <span class="etiqueta">Tipografía sencilla</span>
+          <span class="etiqueta">Espaciado ampliado</span>
+        </div>
+        <div class="perfil-acciones">
+          <button class="btn btn-fantasma btn-peq btn-editar" type="button">Editar</button>
+        </div>
+      </article>
+      <article class="perfil" data-perfil="apoyo-visual">
+        <div class="perfil-cab">
+          <h2>Apoyo visual</h2>
+        </div>
+        <div class="etiquetas">
+          <span class="etiqueta">Texto simplificado</span>
+          <span class="etiqueta">Pictogramas de apoyo (conceptos clave)</span>
+          <span class="etiqueta">Resaltado de palabras clave</span>
+        </div>
+        <div class="perfil-acciones">
+          <button class="btn btn-fantasma btn-peq btn-editar" type="button">Editar</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- FORMULARIO: CREAR / EDITAR PERFIL -->
+    <section class="panel-form oculto" id="panel-form" aria-labelledby="form-titulo">
+      <div class="form-cab">
+        <h2 id="form-titulo">Crear nuevo perfil</h2>
+      </div>
+
+      <div class="campo-nombre">
+        <label for="nombre-perfil">Nombre del perfil</label>
+        <input type="text" id="nombre-perfil" placeholder="Por ejemplo: Lectura fácil">
+      </div>
+
+      <div class="rejilla-op">
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Texto simplificado">
+          <span><span class="tit">Texto simplificado</span><span class="det">Frases más cortas y vocabulario sencillo</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Tipografía sencilla">
+          <span><span class="tit">Tipografía sencilla</span><span class="det">Letra pensada para facilitar la lectura</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Espaciado ampliado">
+          <span><span class="tit">Espaciado ampliado</span><span class="det">Más separación entre líneas y letras</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Resaltado de palabras clave">
+          <span><span class="tit">Resaltado de palabras clave</span><span class="det">Destaca los términos más importantes del texto</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Pasar el texto a mayúsculas">
+          <span><span class="tit">Pasar el texto a mayúsculas</span><span class="det">Convierte todo el documento en mayúsculas</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Pictogramas de apoyo (todo el texto)">
+          <span><span class="tit">Pictogramas de apoyo (todo el texto)</span><span class="det">Añade una imagen junto a cada palabra</span></span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" class="op-perfil" data-tit="Pictogramas de apoyo (conceptos clave)">
+          <span><span class="tit">Pictogramas de apoyo (conceptos clave)</span><span class="det">Añade imágenes solo junto a los conceptos clave</span></span>
+        </label>
+      </div>
+
+      <div class="form-acciones">
+        <button class="btn btn-primario" id="guardar-perfil-form" type="button">Guardar perfil</button>
+        <button class="btn btn-fantasma" id="cancelar-perfil-form" type="button">Cancelar</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+  var btnC = document.getElementById('btn-contraste');
+  btnC.addEventListener('click', function(){
+    var activo = document.body.classList.toggle('alto-contraste');
+    btnC.setAttribute('aria-pressed', activo ? 'true' : 'false');
+  });
+
+  var panelForm = document.getElementById('panel-form');
+  var formTitulo = document.getElementById('form-titulo');
+  var nombrePerfil = document.getElementById('nombre-perfil');
+  var opciones = document.querySelectorAll('.op-perfil');
+
+  function abrirFormulario(titulo, nombre, seleccionadas){
+    formTitulo.textContent = titulo;
+    nombrePerfil.value = nombre || '';
+    opciones.forEach(function(op){
+      op.checked = seleccionadas ? seleccionadas.indexOf(op.dataset.tit) !== -1 : false;
+    });
+    panelForm.classList.remove('oculto');
+    panelForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.getElementById('btn-nuevo-perfil').addEventListener('click', function(){
+    abrirFormulario('Crear nuevo perfil', '', []);
+  });
+
+  document.querySelectorAll('.btn-editar').forEach(function(boton){
+    boton.addEventListener('click', function(){
+      var perfil = boton.closest('.perfil');
+      var nombre = perfil.querySelector('h2').textContent;
+      var seleccionadas = Array.prototype.map.call(perfil.querySelectorAll('.etiqueta'), function(e){ return e.textContent; });
+      abrirFormulario('Editar perfil: ' + nombre, nombre, seleccionadas);
+    });
+  });
+
+  document.getElementById('cancelar-perfil-form').addEventListener('click', function(){
+    panelForm.classList.add('oculto');
+  });
+
+  document.getElementById('guardar-perfil-form').addEventListener('click', function(){
+    panelForm.classList.add('oculto');
+  });
+</script>
+</body>
+</html>

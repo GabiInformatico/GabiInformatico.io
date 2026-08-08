@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osature | Iniciar sesión / Registrarse</title>
+<meta name="description" content="Inicia sesión o crea tu cuenta gratuita en Osature.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul: #509bf7; --azul-claro: #add4fd; --azul-suave: #c7dfff;
+    --azul-tinte: #eaf3ff; --azul-tinte2: #f4f9ff; --azul-accion: #1a5fb4; --azul-accion-hov: #124a91; --tinta: #0b3d70;
+    --texto: #17202b; --texto-suave: #4c5763; --borde: #dbe4ee; --borde-fuerte: #b9c9dc; --fondo: #ffffff; --superficie: #ffffff; --superficie-alt: #f6f9fd;
+    --radio: 12px; --radio-g: 20px; --sombra: 0 1px 2px rgba(11,61,112,.04), 0 8px 24px rgba(11,61,112,.06); --sombra-fuerte: 0 12px 40px rgba(11,61,112,.12);
+    --contenedor: 1120px;
+  }
+  body.alto-contraste{
+    --texto: #000000; --texto-suave: #14202c; --tinta: #062d54;
+    --azul-accion: #0f477f; --borde: #6b7c8f; --borde-fuerte: #33475b;
+    --superficie-alt: #ffffff; --azul-tinte: #ffffff; --azul-tinte2: #ffffff;
+  }
+  *{ box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce){ *{ animation: none !important; transition: none !important; } }
+  body{ margin:0; min-height:100vh; font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Arial, sans-serif; font-size: 1.0625rem; line-height: 1.6; color: var(--texto); background: var(--fondo); -webkit-font-smoothing: antialiased; }
+  h1,h2{ font-family:'Quicksand', system-ui, sans-serif; color: var(--tinta); line-height:1.2; margin:0; letter-spacing:-.01em; }
+  h1{ font-size: 1.6rem; font-weight:700; }
+  p{ margin:0; }
+  a{ color: var(--azul-accion); }
+  img{ max-width:100%; display:block; }
+  .contenedor{ max-width: var(--contenedor); margin:0 auto; padding:0 24px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible{ outline: 3px solid var(--azul-accion); outline-offset: 2px; border-radius: 6px; }
+  .saltar{ position:absolute; left:16px; top:-60px; z-index:100; background: var(--azul-accion); color:#fff; padding:10px 16px; border-radius: var(--radio); font-weight:600; text-decoration:none; transition: top .15s ease; }
+  .saltar:focus{ top:12px; }
+
+  .barra-util{ background: var(--tinta); color:#fff; }
+  .barra-util .contenedor{ display:flex; align-items:center; justify-content:flex-end; gap:18px; min-height:40px; }
+  .barra-util button{ font-family:inherit; cursor:pointer; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.45); border-radius:8px; padding:3px 10px; font-size:.85rem; font-weight:500; display:inline-flex; align-items:center; gap:6px; line-height:1; }
+  .barra-util button:hover{ background: rgba(255,255,255,.14); }
+  .barra-util button[aria-pressed="true"]{ background:#fff; color: var(--tinta); border-color:#fff; }
+
+  header.simple{ border-bottom:1px solid var(--borde); }
+  header.simple .contenedor{ display:flex; align-items:center; justify-content:center; min-height:74px; }
+  .marca{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .marca img{ height:38px; width:auto; }
+
+  .btn{ font-family:'Quicksand', sans-serif; font-weight:600; font-size:1rem; cursor:pointer; border-radius: var(--radio); padding:12px 20px; border:1.5px solid transparent; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; line-height:1.1; transition: background .15s ease, transform .05s ease, border-color .15s ease; width:100%; }
+  .btn:active{ transform: translateY(1px); }
+  .btn-primario{ background: var(--azul-accion); color:#fff; }
+  .btn-primario:hover{ background: var(--azul-accion-hov); }
+
+  .envoltorio{ min-height: calc(100vh - 115px); display:flex; align-items:center; justify-content:center; padding:48px 24px;
+    background: radial-gradient(1000px 500px at 82% -10%, var(--azul-tinte) 0%, transparent 60%), linear-gradient(180deg, var(--azul-tinte2) 0%, #fff 70%); }
+  body.alto-contraste .envoltorio{ background:#fff; }
+
+  .tarjeta-auth{ width:100%; max-width:420px; background: var(--superficie); border:1px solid var(--borde); border-radius: var(--radio-g); box-shadow: var(--sombra-fuerte); padding:34px; }
+  .pestanas-auth{ display:flex; gap:4px; background: var(--azul-tinte2); border:1px solid var(--borde); border-radius: var(--radio); padding:4px; margin-bottom:26px; }
+  .pestanas-auth button{ flex:1; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.95rem; cursor:pointer; background:transparent; border:none; border-radius:8px; padding:10px; color: var(--texto-suave); }
+  .pestanas-auth button[aria-selected="true"]{ background:#fff; color: var(--tinta); box-shadow: var(--sombra); }
+
+  .campo{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+  .campo label{ font-size:.9rem; font-weight:600; color: var(--texto); }
+  .campo input{ font-family:inherit; font-size:1rem; padding:11px 14px; border:1.5px solid var(--borde-fuerte); border-radius: var(--radio); background: var(--superficie); color: var(--texto); }
+
+  .form-auth{ display:flex; flex-direction:column; }
+  .form-auth .btn{ margin-top:8px; }
+  .enlace-secundario{ text-align:center; font-size:.9rem; color: var(--texto-suave); margin-top:18px; }
+  .enlace-secundario a{ font-weight:600; text-decoration:none; }
+  .enlace-secundario a:hover{ text-decoration:underline; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+<div class="barra-util">
+  <div class="contenedor">
+    <button type="button" id="btn-contraste" aria-pressed="false">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20V2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Alto contraste
+    </button>
+  </div>
+</div>
+
+<header class="simple">
+  <div class="contenedor">
+    <a class="marca" href="landing.html" aria-label="Osature, ir al inicio">
+      <img src="logo-osature-nuevo.png" alt="Osature">
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="envoltorio">
+    <div class="tarjeta-auth">
+      <div class="pestanas-auth" role="tablist" aria-label="Acceso a la cuenta">
+        <button type="button" role="tab" id="tab-login" aria-selected="true" aria-controls="panel-login">Iniciar sesión</button>
+        <button type="button" role="tab" id="tab-registro" aria-selected="false" aria-controls="panel-registro">Registrarse</button>
+      </div>
+
+      <form class="form-auth" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+        <h1 class="sr-only">Iniciar sesión</h1>
+        <div class="campo">
+          <label for="login-email">Correo electrónico</label>
+          <input type="email" id="login-email" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="login-pass">Contraseña</label>
+          <input type="password" id="login-pass" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-primario" type="submit">Iniciar sesión</button>
+        <p class="enlace-secundario">¿Aún no tienes cuenta? <a href="#" id="ir-registro">Regístrate gratis</a></p>
+      </form>
+
+      <form class="form-auth" id="panel-registro" role="tabpanel" aria-labelledby="tab-registro" hidden>
+        <h1 class="sr-only">Registrarse</h1>
+        <div class="campo">
+          <label for="registro-nombre">Nombre</label>
+          <input type="text" id="registro-nombre" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="registro-email">Correo electrónico</label>
+          <input type="email" id="registro-email" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="registro-pass">Contraseña</label>
+          <input type="password" id="registro-pass" autocomplete="new-password" required>
+        </div>
+        <button class="btn btn-primario" type="submit">Crear cuenta gratis</button>
+        <p class="enlace-secundario">¿Ya tienes cuenta? <a href="#" id="ir-login">Inicia sesión</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+  var btnC = document.getElementById('btn-contraste');
+  btnC.addEventListener('click', function(){
+    var activo = document.body.classList.toggle('alto-contraste');
+    btnC.setAttribute('aria-pressed', activo ? 'true' : 'false');
+  });
+
+  var tabLogin = document.getElementById('tab-login'), tabRegistro = document.getElementById('tab-registro');
+  var panelLogin = document.getElementById('panel-login'), panelRegistro = document.getElementById('panel-registro');
+  function activar(esLogin){
+    tabLogin.setAttribute('aria-selected', esLogin ? 'true':'false');
+    tabRegistro.setAttribute('aria-selected', esLogin ? 'false':'true');
+    panelLogin.hidden = !esLogin; panelRegistro.hidden = esLogin;
+  }
+  tabLogin.addEventListener('click', function(){ activar(true); });
+  tabRegistro.addEventListener('click', function(){ activar(false); });
+  document.getElementById('ir-registro').addEventListener('click', function(e){ e.preventDefault(); activar(false); });
+  document.getElementById('ir-login').addEventListener('click', function(e){ e.preventDefault(); activar(true); });
+
+  panelLogin.addEventListener('submit', function(e){ e.preventDefault(); window.location.href = 'adaptaciones.html'; });
+  panelRegistro.addEventListener('submit', function(e){ e.preventDefault(); window.location.href = 'adaptaciones.html'; });
+</script>
+</body>
+</html>

@@ -5,6 +5,9 @@ import 'accessibility_bar.dart';
 // Envoltorio para las pantallas de la app: pone siempre la barra de
 // accesibilidad arriba del todo, para no tener que repetirla en cada
 // pantalla nueva que se enlace desde la landing.
+//
+// El SelectionArea es para poder seleccionar y copiar el texto: en
+// Flutter los Text no se seleccionan si no se pide.
 class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.body});
 
@@ -16,7 +19,7 @@ class AppShell extends StatelessWidget {
       body: Column(
         children: [
           const AccessibilityBar(),
-          Expanded(child: body),
+          Expanded(child: SelectionArea(child: body)),
         ],
       ),
     );

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osature | Adaptar documento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul: #509bf7;
+    --azul-claro: #add4fd;
+    --azul-suave: #c7dfff;
+    --azul-tinte: #eaf3ff;
+    --azul-tinte2: #f4f9ff;
+    --azul-accion: #1a5fb4;
+    --azul-accion-hov: #124a91;
+    --tinta: #0b3d70;
+
+    --texto: #17202b;
+    --texto-suave: #4c5763;
+    --borde: #dbe4ee;
+    --borde-fuerte: #b9c9dc;
+    --fondo: #ffffff;
+    --superficie: #ffffff;
+
+    --exito-fondo: #e9f7ee;
+    --exito-borde: #a7dcb8;
+    --exito-texto: #1b6b39;
+
+    --radio: 12px;
+    --radio-g: 18px;
+    --contenedor: 1120px;
+  }
+
+  body.alto-contraste{
+    --texto:#000; --texto-suave:#14202c; --tinta:#062d54;
+    --azul-accion:#0f477f; --borde:#6b7c8f; --borde-fuerte:#33475b;
+    --azul-tinte:#fff; --azul-tinte2:#fff;
+  }
+
+  *{ box-sizing:border-box; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  body{
+    margin:0; font-family:'Rubik', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    font-size:1.0625rem; line-height:1.6; color:var(--texto); background:var(--fondo);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Quicksand', system-ui, sans-serif; color:var(--tinta); line-height:1.2; margin:0; letter-spacing:-.01em; }
+  h1{ font-size:clamp(1.7rem, 3.2vw, 2.1rem); font-weight:700; }
+  h2{ font-size:1.2rem; font-weight:600; }
+  p{ margin:0; }
+  a{ color:var(--azul-accion); }
+  img{ max-width:100%; display:block; }
+
+  .contenedor{ max-width:var(--contenedor); margin:0 auto; padding:0 24px; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible, label:focus-within{
+    outline:3px solid var(--azul-accion); outline-offset:2px; border-radius:6px;
+  }
+  .saltar{ position:absolute; left:16px; top:-60px; z-index:100; background:var(--azul-accion); color:#fff;
+    padding:10px 16px; border-radius:var(--radio); font-weight:600; text-decoration:none; transition:top .15s ease; }
+  .saltar:focus{ top:12px; }
+
+  /* Barra de accesibilidad */
+  .barra-util{ background:var(--tinta); color:#fff; }
+  .barra-util .contenedor{ display:flex; align-items:center; justify-content:flex-end; gap:18px; min-height:40px; flex-wrap:wrap; }
+  .barra-util .grupo{ display:flex; align-items:center; gap:8px; font-size:.85rem; }
+  .barra-util .grupo span{ color:#dbeafe; }
+  .barra-util button{ font-family:inherit; cursor:pointer; color:#fff; background:transparent;
+    border:1px solid rgba(255,255,255,.45); border-radius:8px; padding:3px 10px; font-size:.85rem; font-weight:500;
+    display:inline-flex; align-items:center; gap:6px; line-height:1; }
+  .barra-util button:hover{ background:rgba(255,255,255,.14); }
+  .barra-util button[aria-pressed="true"]{ background:#fff; color:var(--tinta); border-color:#fff; }
+
+  /* Cabecera de la app */
+  header.app{ position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--borde); }
+  body.alto-contraste header.app{ background:#fff; }
+  .app-nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:68px; }
+  .marca img{ height:36px; width:auto; }
+  .app-menu{ display:flex; gap:4px; list-style:none; margin:0; padding:0; }
+  .app-menu a{ text-decoration:none; color:var(--texto-suave); font-weight:500; font-size:.98rem; padding:8px 14px; border-radius:8px; }
+  .app-menu a:hover{ color:var(--tinta); background:var(--azul-tinte); }
+  .app-menu a[aria-current="page"]{ color:var(--tinta); background:var(--azul-tinte); font-weight:600; }
+  .usuario{ display:flex; align-items:center; gap:10px; }
+  .avatar{ width:36px; height:36px; border-radius:50%; background:var(--azul-tinte); color:var(--azul-accion);
+    font-family:'Quicksand',sans-serif; font-weight:700; display:flex; align-items:center; justify-content:center; border:1px solid var(--azul-suave); }
+  .usuario .nombre{ font-weight:500; font-size:.95rem; }
+
+  .btn{ font-family:'Quicksand', sans-serif; font-weight:600; font-size:1rem; cursor:pointer;
+    border-radius:var(--radio); padding:11px 20px; border:1.5px solid transparent; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px; line-height:1.1;
+    transition:background .15s ease, transform .05s ease, border-color .15s ease; }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primario{ background:var(--azul-accion); color:#fff; }
+  .btn-primario:hover{ background:var(--azul-accion-hov); }
+  .btn-fantasma{ background:var(--superficie); color:var(--tinta); border-color:var(--borde-fuerte); }
+  .btn-fantasma:hover{ background:var(--azul-tinte); border-color:var(--azul); }
+  .btn-texto{ background:transparent; color:var(--azul-accion); border-color:transparent; padding:8px 10px; font-size:.95rem; }
+  .btn-texto:hover{ background:var(--azul-tinte); }
+  .btn-peq{ padding:8px 14px; font-size:.92rem; }
+
+  /* Cabecera de página + pestañas */
+  .titulo-pagina{ padding:34px 0 0; }
+  .titulo-pagina p{ color:var(--texto-suave); margin-top:6px; }
+  .pestanas{ display:flex; gap:26px; border-bottom:1px solid var(--borde); margin-top:22px; }
+  .pestanas button{ font-family:'Quicksand',sans-serif; font-weight:600; font-size:1rem; cursor:pointer;
+    background:transparent; border:none; padding:12px 2px; color:var(--texto-suave); border-bottom:3px solid transparent; }
+  .pestanas button[aria-selected="true"]{ color:var(--tinta); border-bottom-color:var(--azul-accion); }
+
+  /* Disposición: principal + panel derecho, sin cajas de sección */
+  .disposicion{ display:grid; grid-template-columns:1fr 330px; gap:40px; align-items:start; padding:30px 0 64px; }
+
+  .paso{ margin-bottom:34px; }
+  .paso:last-child{ margin-bottom:0; }
+  .paso-cab{ display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+  .paso-num{ font-family:'Quicksand',sans-serif; font-weight:700; font-size:.9rem; color:var(--azul-accion);
+    background:var(--azul-tinte); width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:none; }
+  .paso-cab h2{ margin-right:auto; }
+
+  /* Zona de subida */
+  .zona-subida{ border:2px dashed var(--borde-fuerte); border-radius:var(--radio-g); padding:30px 20px; text-align:center;
+    background:var(--azul-tinte2); cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .zona-subida:hover, .zona-subida:focus-visible{ border-color:var(--azul-accion); background:var(--azul-tinte); }
+  .zona-subida .ic{ color:var(--azul-accion); margin-bottom:8px; }
+  .zona-subida .fuerte{ font-family:'Quicksand',sans-serif; font-weight:600; color:var(--tinta); }
+  .zona-subida .tipos{ color:var(--texto-suave); font-size:.9rem; margin-top:2px; }
+  .archivo{ display:none; align-items:center; justify-content:space-between; gap:12px;
+    border:1px solid var(--borde); border-radius:var(--radio); background:var(--superficie); padding:12px 16px; }
+  .archivo.visible{ display:flex; }
+  .archivo .info{ display:flex; align-items:center; gap:12px; min-width:0; }
+  .archivo .info .ic{ width:38px; height:38px; border-radius:10px; background:var(--azul-tinte); color:var(--azul-accion);
+    display:flex; align-items:center; justify-content:center; flex:none; }
+  .archivo .info strong{ font-weight:600; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .archivo .info small{ color:var(--texto-suave); }
+
+  /* Adaptaciones como tarjetas */
+  .grupo-tit{ font-family:'Quicksand',sans-serif; font-weight:600; color:var(--texto-suave); font-size:.8rem;
+    text-transform:uppercase; letter-spacing:.06em; margin:20px 0 10px; }
+  .rejilla-op{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .opcion{ display:flex; gap:12px; align-items:flex-start; border:1.5px solid var(--borde); border-radius:var(--radio);
+    padding:14px 16px; background:var(--superficie); cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .opcion:hover{ border-color:var(--azul); }
+  .opcion:has(input:checked){ border-color:var(--azul-accion); background:var(--azul-tinte2); }
+  .opcion input{ width:20px; height:20px; margin-top:2px; flex:none; accent-color:var(--azul-accion); cursor:pointer; }
+  .opcion .tit{ font-weight:600; color:var(--texto); display:block; }
+  .opcion .det{ font-size:.88rem; color:var(--texto-suave); }
+
+  /* Panel derecho (formato + resumen + acción) */
+  .panel{ position:sticky; top:92px; border:1px solid var(--borde); border-radius:var(--radio-g);
+    background:var(--azul-tinte2); padding:22px; }
+  body.alto-contraste .panel{ background:#fff; }
+  .panel h2{ font-size:1.1rem; margin-bottom:14px; }
+  .fmt-lista{ display:flex; flex-direction:column; gap:10px; }
+  .fmt{ display:flex; align-items:center; gap:11px; border:1.5px solid var(--borde); border-radius:var(--radio);
+    padding:12px 14px; background:var(--superficie); cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .fmt:hover{ border-color:var(--azul); }
+  .fmt:has(input:checked){ border-color:var(--azul-accion); background:var(--azul-tinte); }
+  .fmt input{ width:18px; height:18px; accent-color:var(--azul-accion); cursor:pointer; flex:none; }
+  .fmt .ic{ color:var(--azul-accion); display:flex; flex:none; }
+  .fmt .nom{ font-family:'Quicksand',sans-serif; font-weight:600; color:var(--texto); }
+
+  .panel-sep{ border:none; border-top:1px solid var(--borde); margin:20px 0; }
+  .resumen h3{ font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--texto-suave); font-family:'Quicksand',sans-serif; margin-bottom:8px; }
+  .res-fila{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; font-size:.95rem; }
+  .res-fila .k{ color:var(--texto-suave); }
+  .res-fila .v{ font-weight:600; color:var(--texto); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .panel .btn{ width:100%; }
+  .panel .btn-primario{ margin-top:16px; }
+  .panel .btn-fantasma{ margin-top:10px; }
+
+  .resultado{ display:none; gap:12px; margin-top:16px; border:1px solid var(--exito-borde);
+    background:var(--exito-fondo); border-radius:var(--radio); padding:14px; }
+  .resultado.visible{ display:flex; }
+  .resultado .ic{ color:var(--exito-texto); flex:none; }
+  .resultado .txt{ color:var(--exito-texto); font-size:.9rem; line-height:1.4; }
+  .resultado .txt strong{ font-family:'Quicksand',sans-serif; display:block; margin-bottom:2px; }
+  .resultado a{ color:var(--exito-texto); font-weight:600; }
+
+  /* Consejos */
+  #panel-consejos{ padding:28px 0 48px; max-width:760px; }
+  .consejo{ padding:20px 0; border-top:1px solid var(--borde); display:flex; gap:16px; align-items:flex-start; }
+  .consejo:first-child{ border-top:none; }
+  .consejo .ic{ width:44px; height:44px; border-radius:12px; background:var(--azul-tinte); color:var(--azul-accion);
+    display:flex; align-items:center; justify-content:center; flex:none; }
+  .consejo h3{ font-size:1.05rem; margin-bottom:4px; }
+  .consejo p{ color:var(--texto-suave); font-size:.95rem; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  @media (max-width: 900px){
+    .disposicion{ grid-template-columns:1fr; gap:28px; }
+    .panel{ position:static; }
+  }
+  @media (max-width: 680px){
+    .app-menu{ display:none; }
+    .usuario .nombre{ display:none; }
+    .rejilla-op{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+<!-- Barra de accesibilidad -->
+<div class="barra-util">
+  <div class="contenedor">
+    <div class="grupo">
+      <span>Tamaño de texto</span>
+      <button type="button" id="letra-menos" aria-label="Reducir el tamaño del texto">A−</button>
+      <button type="button" id="letra-reset" aria-label="Restablecer el tamaño del texto">A</button>
+      <button type="button" id="letra-mas" aria-label="Aumentar el tamaño del texto">A+</button>
+    </div>
+    <div class="grupo">
+      <button type="button" id="btn-contraste" aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20V2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Alto contraste
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cabecera de la aplicación -->
+<header class="app">
+  <div class="contenedor">
+    <nav class="app-nav" aria-label="Navegación de la aplicación">
+      <a class="marca" href="landing.html" aria-label="Osature, ir al inicio">
+        <img src="logo-osature-nuevo.png" alt="Osature">
+      </a>
+      <ul class="app-menu">
+        <li><a href="#" id="nav-adaptar" aria-current="page">Adaptar</a></li>
+        <li><a href="#" id="nav-consejos">Consejos</a></li>
+        <li><a href="mis-perfiles.html">Mis perfiles</a></li>
+      </ul>
+      <div class="usuario">
+        <span class="nombre">Hola, Lucía</span>
+        <span class="avatar" aria-hidden="true">L</span>
+        <a class="btn btn-texto" href="landing.html">Salir</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+    <div class="titulo-pagina">
+      <h1 id="titulo-panel">Adaptar un documento</h1>
+      <p id="desc-panel">Sube un archivo, elige las adaptaciones y descárgalo en el formato que prefieras.</p>
+    </div>
+
+    <!-- PANEL ADAPTAR -->
+    <div id="panel-adaptar" role="tabpanel">
+      <div class="disposicion">
+
+        <!-- Columna principal -->
+        <div>
+          <!-- Paso 1 -->
+          <section class="paso">
+            <div class="paso-cab"><span class="paso-num">1</span><h2>Sube tu documento</h2></div>
+            <div class="zona-subida" id="zona" tabindex="0" role="button" aria-label="Subir documento: arrastra un archivo o pulsa para elegirlo">
+              <div class="ic">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>
+              </div>
+              <p class="fuerte">Arrastra tu documento aquí o pulsa para elegirlo</p>
+              <p class="tipos">PDF, Word o imagen escaneada. Máximo 20 MB.</p>
+            </div>
+            <div class="archivo" id="archivo">
+              <div class="info">
+                <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span><strong>ficha_ejercicios.pdf</strong><small>3 páginas, 480 KB</small></span>
+              </div>
+              <button class="btn btn-texto" id="quitar-archivo" type="button">Quitar</button>
+            </div>
+          </section>
+
+          <!-- Paso 2 -->
+          <section class="paso">
+            <div class="paso-cab">
+              <span class="paso-num">2</span><h2>Elige las adaptaciones</h2>
+              <button class="btn btn-fantasma btn-peq" id="cargar-perfil" type="button">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 10-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                Cargar perfil guardado
+              </button>
+            </div>
+
+            <div class="rejilla-op">
+              <label class="opcion">
+                <input type="checkbox" class="op" checked>
+                <span><span class="tit">Texto simplificado</span><span class="det">Frases más cortas y vocabulario sencillo</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op" checked>
+                <span><span class="tit">Tipografía sencilla</span><span class="det">Letra pensada para facilitar la lectura</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op">
+                <span><span class="tit">Espaciado ampliado</span><span class="det">Más separación entre líneas y letras</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op">
+                <span><span class="tit">Resaltado de palabras clave</span><span class="det">Destaca los términos más importantes del texto</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op">
+                <span><span class="tit">Pasar el texto a mayúsculas</span><span class="det">Convierte todo el documento en mayúsculas</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op">
+                <span><span class="tit">Pictogramas de apoyo (todo el texto)</span><span class="det">Añade una imagen junto a cada palabra</span></span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" class="op">
+                <span><span class="tit">Pictogramas de apoyo (conceptos clave)</span><span class="det">Añade imágenes solo junto a los conceptos clave</span></span>
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <!-- Panel derecho -->
+        <aside class="panel" aria-label="Formato y acción">
+          <h2>Formato de salida</h2>
+          <fieldset style="border:none; padding:0; margin:0;">
+            <legend class="sr-only">Elige el formato del documento adaptado</legend>
+            <div class="fmt-lista">
+              <label class="fmt">
+                <input type="radio" name="formato" value="PDF" checked>
+                <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="nom">PDF</span>
+              </label>
+              <label class="fmt">
+                <input type="radio" name="formato" value="Word">
+                <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l1.3 3.5L12 13l1.7 3.5L15 13"/></svg></span>
+                <span class="nom">Word</span>
+              </label>
+              <label class="fmt">
+                <input type="radio" name="formato" value="Audio">
+                <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M19 5a9 9 0 010 14"/></svg></span>
+                <span class="nom">Audio</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <hr class="panel-sep">
+
+          <div class="resumen">
+            <h3>Resumen</h3>
+            <div class="res-fila"><span class="k">Documento</span><span class="v" id="res-doc">ficha_ejercicios.pdf</span></div>
+            <div class="res-fila"><span class="k">Adaptaciones</span><span class="v" id="res-adap">2</span></div>
+            <div class="res-fila"><span class="k">Formato</span><span class="v" id="res-formato">PDF</span></div>
+          </div>
+
+          <button class="btn btn-primario" id="adaptar" type="button">Adaptar documento</button>
+          <button class="btn btn-fantasma" id="guardar-perfil" type="button">Guardar como perfil</button>
+
+          <div class="resultado" id="resultado" role="status">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span class="txt"><strong>Documento listo</strong><a href="#" id="descargar">Descargar ficha_ejercicios_adaptada.pdf</a></span>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- PANEL CONSEJOS -->
+    <div id="panel-consejos" role="tabpanel" hidden>
+      <div class="consejo">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg></div>
+        <div><h3>Empieza por lo esencial</h3><p>Si tienes dudas, activa solo texto simplificado y tipografía sencilla. Puedes añadir más adaptaciones después.</p></div>
+      </div>
+      <div class="consejo">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 10-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div><h3>Guarda tus perfiles</h3><p>Si sueles usar la misma configuración, guárdala como perfil y cárgala con un solo clic la próxima vez.</p></div>
+      </div>
+      <div class="consejo">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg></div>
+        <div><h3>Combina formatos</h3><p>Puedes descargar el mismo documento en PDF para leer y en audio para escucharlo mientras sigues el texto.</p></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  // Tamaño de texto
+  var base = 106.25, actual = base;
+  function aplicarTamano(){ document.documentElement.style.fontSize = actual + '%'; }
+  document.getElementById('letra-mas').addEventListener('click', function(){ actual = Math.min(150, actual + 12.5); aplicarTamano(); });
+  document.getElementById('letra-menos').addEventListener('click', function(){ actual = Math.max(87.5, actual - 12.5); aplicarTamano(); });
+  document.getElementById('letra-reset').addEventListener('click', function(){ actual = base; aplicarTamano(); });
+
+  // Alto contraste
+  var btnC = document.getElementById('btn-contraste');
+  btnC.addEventListener('click', function(){
+    var activo = document.body.classList.toggle('alto-contraste');
+    btnC.setAttribute('aria-pressed', activo ? 'true' : 'false');
+  });
+
+  // Navegación Adaptar / Consejos (desde la barra superior)
+  var navA = document.getElementById('nav-adaptar'), navC = document.getElementById('nav-consejos');
+  var panelA = document.getElementById('panel-adaptar'), panelC = document.getElementById('panel-consejos');
+  var tituloPanel = document.getElementById('titulo-panel'), descPanel = document.getElementById('desc-panel');
+  function activarTab(esA){
+    if(esA){ navA.setAttribute('aria-current','page'); navC.removeAttribute('aria-current'); }
+    else{ navC.setAttribute('aria-current','page'); navA.removeAttribute('aria-current'); }
+    panelA.hidden = !esA; panelC.hidden = esA;
+    tituloPanel.textContent = esA ? 'Adaptar un documento' : 'Consejos';
+    descPanel.textContent = esA ? 'Sube un archivo, elige las adaptaciones y descárgalo en el formato que prefieras.' : 'Recomendaciones para sacarle el máximo partido a tus documentos adaptados.';
+  }
+  navA.addEventListener('click', function(e){ e.preventDefault(); activarTab(true); });
+  navC.addEventListener('click', function(e){ e.preventDefault(); activarTab(false); });
+
+  // Subida simulada
+  var zona = document.getElementById('zona'), archivo = document.getElementById('archivo');
+  function mostrarArchivo(){ archivo.classList.add('visible'); zona.style.display = 'none'; }
+  zona.addEventListener('click', mostrarArchivo);
+  zona.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); mostrarArchivo(); } });
+  document.getElementById('quitar-archivo').addEventListener('click', function(){
+    archivo.classList.remove('visible'); zona.style.display = 'block';
+    document.getElementById('res-doc').textContent = 'Sin documento';
+  });
+
+  // Resumen dinámico
+  document.querySelectorAll('.op').forEach(function(c){ c.addEventListener('change', actualizarResumen); });
+  document.querySelectorAll('input[name="formato"]').forEach(function(r){ r.addEventListener('change', actualizarResumen); });
+  function actualizarResumen(){
+    document.getElementById('res-adap').textContent = document.querySelectorAll('.op:checked').length;
+    var f = document.querySelector('input[name="formato"]:checked');
+    document.getElementById('res-formato').textContent = f ? f.value : '';
+  }
+  actualizarResumen();
+
+  // Cargar perfil
+  document.getElementById('cargar-perfil').addEventListener('click', function(){
+    var quiero = ['Texto simplificado','Tipografía sencilla','Espaciado ampliado'];
+    document.querySelectorAll('.opcion').forEach(function(op){
+      op.querySelector('input').checked = quiero.indexOf(op.querySelector('.tit').textContent) !== -1;
+    });
+    actualizarResumen();
+  });
+
+  // Adaptar
+  document.getElementById('adaptar').addEventListener('click', function(){
+    document.getElementById('resultado').classList.add('visible');
+  });
+</script>
+</body>
+</html>

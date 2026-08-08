@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="88.422508mm"
+   height="22.056051mm"
+   viewBox="0 0 88.422508 22.056051"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   sodipodi:docname="logo_sense_text.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.2840705"
+     inkscape:cx="159.25916"
+     inkscape:cy="67.753287"
+     inkscape:window-width="1272"
+     inkscape:window-height="741"
+     inkscape:window-x="131"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="88.422508"
+       height="22.056051"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#226de4;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#2067d8;stop-opacity:1;"
+         offset="0.24930361"
+         id="stop5" />
+      <stop
+         style="stop-color:#51a2f0;stop-opacity:1;"
+         offset="0.24930361"
+         id="stop6" />
+      <stop
+         style="stop-color:#459ceb;stop-opacity:1;"
+         offset="0.55327296"
+         id="stop7" />
+      <stop
+         style="stop-color:#85bdfb;stop-opacity:1;"
+         offset="0.55327296"
+         id="stop8" />
+      <stop
+         style="stop-color:#7ab8fb;stop-opacity:1;"
+         offset="0.80022633"
+         id="stop16" />
+      <stop
+         style="stop-color:#bad8fd;stop-opacity:1;"
+         offset="0.80022633"
+         id="stop17" />
+      <stop
+         style="stop-color:#c1deff;stop-opacity:1;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient23"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d6ebff;stop-opacity:1;"
+         offset="0.01716737"
+         id="stop22" />
+      <stop
+         style="stop-color:#2067d8;stop-opacity:1;"
+         offset="0.67270195"
+         id="stop23" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient19"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#a2c5f5;stop-opacity:1;"
+         offset="0.00417827"
+         id="stop18" />
+      <stop
+         style="stop-color:#69aefa;stop-opacity:1;"
+         offset="0.50208914"
+         id="stop20" />
+      <stop
+         style="stop-color:#2473eb;stop-opacity:1;"
+         offset="1"
+         id="stop19" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19"
+       id="linearGradient1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.74624905,0,0,0.74624905,0.22404782,-196.56923)"
+       x1="67.812477"
+       y1="268.25226"
+       x2="67.742989"
+       y2="284.95206" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient23"
+       id="linearGradient2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75311642,0,0,0.5468813,-5.3141222,-122.06227)"
+       x1="30.574129"
+       y1="255.38708"
+       x2="104.02708"
+       y2="255.38708" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="101.24358"
+       y1="209.29149"
+       x2="101.24358"
+       y2="192.47292"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.69935459,0,0,0.69935459,-48.233981,-130.32996)" />
+  </defs>
+  <text
+     xml:space="preserve"
+     style="font-size:16.4865px;line-height:1;font-family:Sathu;-inkscape-font-specification:Sathu;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient1);fill-opacity:1;stroke-width:0.257604"
+     x="50.769802"
+     y="15.915874"
+     id="text8-7-5-2"
+     inkscape:export-filename="logo_sense_text.png"
+     inkscape:export-xdpi="1000"
+     inkscape:export-ydpi="1000"><tspan
+       sodipodi:role="line"
+       id="tspan8-1-8-27"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient1);stroke-width:0.257604"
+       x="50.769802"
+       y="15.915874">sature</tspan></text>
+  <rect
+     style="fill:url(#linearGradient2);fill-opacity:1;stroke:none;stroke-width:0.207719"
+     id="rect11-7-2-3"
+     width="55.318615"
+     height="0.72861606"
+     x="17.711742"
+     y="17.23983" />
+  <text
+     xml:space="preserve"
+     style="font-size:18.0955px;line-height:1;font-family:Galvji;-inkscape-font-specification:Galvji;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:url(#linearGradient4);stroke-width:0.185037"
+     x="22.571171"
+     y="16.183727"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.0955px;font-family:Seravek;-inkscape-font-specification:Seravek;fill:url(#linearGradient4);stroke-width:0.185037"
+       x="22.571171"
+       y="16.183727">O</tspan></text>
+</svg>
